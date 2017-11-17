@@ -1,0 +1,36 @@
+/*
+ *默认主题样式
+ * */
+.detail-nav{
+	height: 50px; 
+	background-color: rgba(27,130,210,255);
+	box-shadow: none !important; 
+}
+
+.mui-content{
+	/*background-color: #ffeeeeee;*/
+}
+.MD5-content{
+	
+	background-color: #FFFFFF;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mui-table-view-cell{
+	background-color: rgb(255,255,255);
+	color: rgb(0,0,0);
+}
+.pp{
+	color: rgb(27,130,210);
+}
+
+
+
+/*卡片圆角*/
+.city-item {
+	
+	border-radius: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cur-weather {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

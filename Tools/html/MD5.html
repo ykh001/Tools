@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>MD5加密</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/app/historyToday.css" rel="stylesheet" />
+		<link href="../css/iconfont.css" rel="stylesheet"/>
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../js/md5.js" ></script>
+		<!--剪切板js-->
+		<script type="text/javascript" src="../js/clipboard.min.js" ></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js" ></script>
+		
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" /> 
+		
+	</head>
+
+	<body>
+		<!-- 头部区域 -->
+		<header class="mui-bar mui-bar-nav detail-nav">
+			<!--<a class="back-home mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;font-size: 18px;padding-top: 17px;"></a>-->
+			<h1 class="mui-title" style="text-align: left;left: 20px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">MD5加密</h1>
+		</header>
+		<!-- 内容区域  -->		
+		<div class="mui-content" style="padding-top: 40px;">
+			
+			<div class="MD5-content" >
+				<div class="MD5-log" id="MD5-switch">
+					<span class="mui-icon mui-icon-arrowthindown MD5-down"></span>
+				</div>
+				<div class="MD5-input-bg">
+					<textarea  class="MD5-input" type="text" placeholder="输入要加密的字符串"></textarea>
+				</div>
+			</div>
+			
+			<div class="MD5-content" style="height: 50px;padding-top: 15px;">
+				<div class="MD5-input-bg1" >
+					<textarea  class="MD5-input" id="id_text"></textarea>
+				</div>
+			</div>
+			
+			<div class="MD5-content MD5-copy" id="MD5-copy" data-clipboard-target="#id_text"
+                    data-clipboard-action="copy" style="width: 40px;height: 40px;margin: 15px 10%;">
+				<span class="iconfont icon-copy iconfont-MD5"></span>
+			</div>
+    		
+		</div>
+<script>
+	//初始化
+	mui.init({
+	    keyEventBind: {
+	        backbutton: true  // 打开back按键监听
+	    },
+			// 配置具体需要监听的手势事件
+		gestureConfig:{
+			longtap: true,  // 手机端长按事件，默认为 false
+		}
+	});
+		    
+	// 移动端back键事件
+//	mui.back = function () {
+//		plus.webview.open("index.html");
+//	}		
+	mui.plusReady(function() {
+		
+		//MD5加密
+		document.getElementById("MD5-switch").addEventListener('tap', function() {
+
+			var content = document.getElementsByClassName("MD5-input")[0].value;
+			var resultShow = document.getElementsByClassName("MD5-input")[1];
+			//进行MD5加密
+			if(content.length==0){
+				mui.toast("未输入任何字符串")
+			}else{
+				var resultMD5 = hex_md5(content)
+				resultShow.innerText=resultMD5;
+			}
+			
+		})
+		
+		//复制结果
+			
+		var clipboard = new Clipboard("#MD5-copy");
+		clipboard.on("success",function (element) {//复制成功的回调
+		    mui.toast("复制成功" );
+		});
+		clipboard.on("error",function (element) {//复制失败的回调
+		    mui.toast(element);
+		})
+
+		
+	});
+		
+			
+
+			
+</script>
+				
+	</body>
+</html>
+

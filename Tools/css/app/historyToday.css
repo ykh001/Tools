@@ -1,0 +1,136 @@
+
+
+.mui-content{
+	background-color: #ffeeeeee;
+	/*margin-top: 10px;*/
+	box-shadow: none !important; 
+	
+}
+.cur-temperature{
+	padding-top: 10px !important;
+}
+.cur-font-color{
+	font-size:30px; 
+}
+
+.touch-search{
+	margin-left: 20px;
+	color: #FFFFFF;
+}
+.date-hide{
+	color: #A9A9A9;
+}
+.history-main{
+	/*text-align: center;*/
+}
+.div0{
+	margin: 30px 15px;
+	font-size: 14px;
+	color: #000000;
+}
+.mui-navigate-right{
+	padding: 0 !important;
+}
+.div1{
+	border-left: 2px solid rgba(27,130,210,255);
+	margin-left: 20px;
+	color: rgba(27,130,210,255);
+}
+.span1{
+	display: inline-block;
+	padding: 11px 0;
+	color: #000000;
+}
+.span2{color: #FFFFFF;}
+.mui-media-body{
+	background-color: rgba(27,130,210,255);
+	/*background-size: cover;*/
+	padding: 10px;
+}
+.p0{
+	margin-left: 10px;
+	color: #000000;
+}
+.p1{
+	color: #000000;
+	/*text-indent:20px*/
+}
+
+
+/*MD5加密样式*/
+.MD5-log{
+	width: 50px;
+	height: 50px;
+	background-color: #FF8C00;
+	margin:auto;
+	border-radius: 50px;
+	position: relative;
+	top: -40px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.MD5-content{
+	width: 80%;
+	height: 100px;
+	background-color: rgba(27,130,210,255) !important;
+	margin:auto;
+	margin-top: 50px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.MD5-down{
+	display: block;
+	margin: auto;
+	text-align: center;
+	padding-top: 10px;
+	font-weight: bolder;
+	color: #FFFFFF;
+}
+.MD5-input-bg{
+	width: 95%;
+	height: 80px;
+	/*border: 1px solid red;*/
+	position: relative;
+	top: -40px;
+	margin: auto;
+}
+.MD5-input{
+	color: #FFFFFF;
+	width: 100% !important;
+	height: 80px !important;
+	background:rgba(0, 0, 0, 0) !important;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	font-size: 14px;
+}
+.MD5-input-bg1{
+	width: 95%;
+	height: 80px;
+	margin: auto;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+    color:    #CCCCCC;
+}
+input:-moz-placeholder, textarea:-moz-placeholder { 
+    color:    #CCCCCC;
+}
+input::-moz-placeholder, textarea::-moz-placeholder { 
+    color:    #CCCCCC;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+    color:    #CCCCCC;
+}
+.MD5-copy{
+	border-radius:10px;
+	background-color:#FF8C00 ;
+}
+.iconfont-MD5{
+	color: #FFFFFF;
+	width: 20px;
+	height: 20px;
+	font-size: 20px !important;
+	display: block !important;
+	margin:auto;
+	padding-top: 10px;
+}
+

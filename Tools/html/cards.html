@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery多层堆叠展示导航菜单代码</title>
+
+<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="../css/cards/styles.css">
+
+</head>
+<body>
+
+<div class="demo">
+	<div class="demo__close-menu"></div>
+	<div class="demo__section demo__section-1" data-section="1">
+		<div class="demo__menu-btn"></div>
+		<h2 class="demo__section-heading">Contact</h2>
+	</div>
+	<div class="demo__section demo__section-2 active" data-section="2">
+		<div class="demo__menu-btn"></div>
+		<h2 class="demo__section-heading">About</h2>
+	</div>
+	<div class="demo__section demo__section-3 inactive" data-section="3">
+		<div class="demo__menu-btn"></div>
+		<h2 class="demo__section-heading">Team</h2>
+	</div>
+	<div class="demo__section demo__section-4 inactive" data-section="4">
+		<div class="demo__menu-btn"></div>
+		<h2 class="demo__section-heading">Projects</h2>
+	</div>
+</div>
+
+
+<script type="text/javascript" src='../js/cards/stopExecutionOnTimeout.js?t=1'></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+	var $demo = $('.demo');
+	var numOfSections = $('.demo__section').length;
+	$(document).on('click', '.demo__menu-btn', function () {
+		$demo.addClass('menu-active');
+	});
+	$(document).on('click', '.demo__close-menu', function () {
+		$demo.removeClass('menu-active');
+	});
+	$(document).on('click', '.demo.menu-active .demo__section', function () {
+		var $section = $(this);
+		var index = +$section.data('section');
+		$('.demo__section.active').removeClass('active');
+		$('.demo__section.inactive').removeClass('inactive');
+		$section.addClass('active');
+		$demo.removeClass('menu-active');
+		for (var i = index + 1; i <= numOfSections; i++) {
+			if (window.CP.shouldStopExecution(1)) {
+				break;
+			}
+			$('.demo__section[data-section=' + i + ']').addClass('inactive');
+		}
+		window.CP.exitedLoop(1);
+	});
+});
+</script>
+
+</body>
+</html>

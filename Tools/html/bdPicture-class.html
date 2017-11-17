@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>百度图片</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/app/index.css" />
+		<link rel="stylesheet" href="../css/app/picture.css">
+		<style>
+			.mui-control-content {
+				background-color: white;
+				min-height: 300px;
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			
+			.mui-col-xs-4 {
+				width: 25% !important;
+			}
+			
+			.web-item {
+				height: 75px;
+				border-radius: 5px;
+			}
+			
+			.web-left {
+				width: 49%;
+				height: 100%;
+				float: left;
+			}
+			
+			.web-left-1 {
+				color: #000000;
+				margin-top: 20px;
+				margin-left: 10px;
+				font-size: 14px;
+				text-align: left;
+			}
+			
+			.web-left-2 {
+				font-size: 12px;
+				margin-left: 10px;
+				color: #000000;
+				text-align: left;
+			}
+			
+			.web-right {
+				width: 50%;
+				height: 100%;
+				float: right;
+			}
+			
+			.web-right-img {
+				width: 60px;
+				height: 60px;
+				border-radius: 15px;
+				/*margin-top: 10px;*/
+				padding: 5px;
+				color: #FFFFFF;
+				background-size: contain;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav detail-nav">
+			<!--<a class="back-home mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;font-size: 18px;padding-top: 17px;"></a>-->
+			<h1 class="mui-title" style="text-align: left;left: 20px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">百度图片</h1>
+		</header>
+		<div class="mui-content">
+			<div class="weather-more-info" style="margin-top: 10px;">
+				
+				<div class="city-item web-item" onclick="toDetail('明星')">
+					<div class="web-left">
+						<h5 class="web-left-1">明星</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://g.hiphotos.baidu.com/image/pic/item/bd3eb13533fa828b207b80edff1f4134970a5a67.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('美女')">
+					<div class="web-left">
+						<h5 class="web-left-1">美女</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://b.hiphotos.baidu.com/image/pic/item/a686c9177f3e670900d880193fc79f3df9dc5578.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('壁纸')">
+					<div class="web-left">
+						<h5 class="web-left-1">壁纸</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://d.hiphotos.baidu.com/image/pic/item/c8177f3e6709c93debf81a369d3df8dcd00054ec.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('搞笑')">
+					<div class="web-left">
+						<h5 class="web-left-1">搞笑</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://b.hiphotos.baidu.com/image/pic/item/b17eca8065380cd7b804aacba244ad34598281f9.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('儿童文艺')">
+					<div class="web-left">
+						<h5 class="web-left-1">儿童文艺</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://d.hiphotos.baidu.com/image/pic/item/a686c9177f3e67095a7258f539c79f3df8dc554d.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('动漫')">
+					<div class="web-left">
+						<h5 class="web-left-1">动漫</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://e.hiphotos.baidu.com/image/pic/item/203fb80e7bec54e722984514bb389b504fc26a47.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('宠物')">
+					<div class="web-left">
+						<h5 class="web-left-1">宠物</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://d.hiphotos.baidu.com/image/pic/item/060828381f30e9246bf9ef294e086e061d95f74d.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('摄影')">
+					<div class="web-left">
+						<h5 class="web-left-1">摄影</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://e.hiphotos.baidu.com/image/pic/item/9c16fdfaaf51f3dee8fcbd5c90eef01f3a2979bf.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('设计')">
+					<div class="web-left">
+						<h5 class="web-left-1">设计</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://f.hiphotos.baidu.com/image/pic/item/342ac65c10385343cefb99219113b07eca8088fd.jpg"/>
+							
+
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<script>
+			
+			mui.init({
+				keyEventBind: {
+					backbutton: true // 打开back按键监听
+				},
+				// 配置具体需要监听的手势事件
+				gestureConfig: {
+					longtap: true, // 手机端长按事件，默认为 false
+				}
+			});
+			
+			mui.plusReady(function() {
+	
+		/**
+		 * 滚动到一定距离，顶部城市显示区域颜色改变
+		 */
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > 10) {
+			//		$('.detail-nav').css('backgroundColor', 'green');
+					$('.detail-nav').css('opacity', '0.2');
+					$('.mui-title').css('color', 'black');
+				} else {
+			//		$('.detail-nav').css('backgroundColor', 'rgba(27,130,210,255)');
+					$('.detail-nav').css('opacity', '1');
+					$('.mui-title').css('color', '#FFFFFF');
+				}
+			})
+			
+		});
+
+			function toDetail(type){
+//				alert(type);
+				var newWV = plus.webview.create('bdPicture-detail.html?type=' + type, 'new');
+				newWV.show('slide-in-right', 200);
+			}
+			
+		</script>
+	</body>
+
+</html>

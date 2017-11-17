@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>2048</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--<link href="../css/mui.min.css" rel="stylesheet" />-->
+		<link href="../css/iconfont.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<link rel="stylesheet" href="../css/app/2048.css">
+
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />
+
+	</head>
+
+	<body>
+
+		<!-- 内容区域  -->
+		<div class="container">
+			<!--<div class="directions">
+					<p><strong>如何玩：</strong> 使用你的箭头键移动瓷砖。当两个瓦片相互滑动时，它们合并成一个！</p>
+				</div>-->
+			<div class="scores">
+				<div class="score-container best-score">
+					最佳:
+					<div class="score">
+						<div id="bestScore">0</div>
+					</div>
+				</div>
+				<div class="score-container">
+					分数:
+					<div class="score">
+						<div id="score">0</div>
+						<div class="add" id="add"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="not-recommended">
+				<button class="btn not-recommended__item js-restart-btn" id="restart">重新启动游戏</button>
+				<span class="not-recommended__annotation"></span>
+			</div>
+			
+			<div class="game">
+				<div id="tile-container" class="tile-container"></div>
+				<div class="end" id="end">游戏结束
+					<div class="monkey">🙈</div><button class="btn not-recommended__item js-restart-btn" id="try-again">再试一次</button></div>
+			</div>
+
+			
+
+		</div>
+
+		<script src="../js/app/2048.js"></script>
+		<script>
+			//初始化
+			mui.init({
+				keyEventBind: {
+					backbutton: true // 打开back按键监听
+				},
+				// 配置具体需要监听的手势事件
+				gestureConfig: {
+					longtap: true, // 手机端长按事件，默认为 false
+				}
+			});
+
+			// 移动端back键事件
+			//	mui.back = function () {
+			//		plus.webview.open("index.html");
+			//	}		
+			mui.plusReady(function() {
+
+			});
+		</script>
+
+	</body>
+
+</html>

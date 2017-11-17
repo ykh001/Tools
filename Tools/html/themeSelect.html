@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>主题</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/app/setting.css" rel="stylesheet" />
+		<link href="../css/iconfont.css" rel="stylesheet"/>
+		<!--<link rel="stylesheet" href="css/checkstyle.css" />-->
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js" ></script>
+		<script type="text/javascript" src="../js/app/setting.js" ></script>
+		
+		<!--<script type="text/javascript" src="../js/app/theme.js" ></script>-->
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />
+		<link title="dark" rel="stylesheet" type="text/css" href="../css/app/dark-theme.css" disabled="disabled" /> 
+		<style>
+			/*.mui-popover {
+				height: 300px;
+			}*/
+			/*toast信息提示*/
+			/*.mui-toast-container {bottom: 50% !important;}*/
+			/*.mui-toast-message {
+				opacity: 0.6; 
+				color: #fff; 
+				width: 180px; 
+				padding: 70px 5px 10px 5px;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<!-- 头部区域 -->
+		<header class="mui-bar mui-bar-nav detail-nav">
+			<!--<a class="back-home mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;font-size: 18px;padding-top: 17px;"></a>-->
+			<h1 class="mui-title" style="text-align: left;left: 20px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">主题</h1>
+		</header>
+		<!-- 内容区域  -->		
+		<div class="mui-content" style="padding-top: 40px;">
+			
+			<div class="MD5-content" style="height: 350px;">
+				<div class="mui-card" style="margin: 0;">
+					
+					<ul class="mui-table-view mui-table-view-radio">
+						<li class="mui-table-view-cell mui-selected" style="position: static;">
+							<a class="mui-navigate-right" style="margin: 0;">
+								<label style="line-height: 30px;">
+									<span style="width: 30px;height: 30px;background-color: rgb(27,130,210);display: inline-block;">&nbsp;</span>
+									<span style="font-size: 14px;margin-left: 30px;">默认蓝</span>
+								</label>
+							</a>
+						</li>
+						<li class="mui-table-view-cell" style="position: static;">
+							<a class="mui-navigate-right" style="margin: 0;">
+								<label style="line-height: 30px;">
+									<span style="width: 30px;height: 30px;background-color: rgb(76,175,80);display: inline-block;">&nbsp;</span>
+									<span style="font-size: 14px;margin-left: 30px;">酷安绿</span>
+								</label>
+							</a>
+						</li>
+						<li class="mui-table-view-cell " style="position: static;">
+							<a class="mui-navigate-right" style="margin: 0;">
+								<label style="line-height: 30px;">
+									<span style="width: 30px;height: 30px;background-color: rgb(203,61,62);display: inline-block;">&nbsp;</span>
+									<span style="font-size: 14px;margin-left: 30px;">网易红</span>
+								</label>
+							</a>
+						</li>
+						<li class="mui-table-view-cell" style="position: static;">
+							<a class="mui-navigate-right" style="margin: 0;"> 
+								<label style="line-height: 30px;">
+									<span style="width: 30px;height: 30px;background-color: rgb(251,114,153);display: inline-block;">&nbsp;</span>
+									<span style="font-size: 14px;margin-left: 30px;">哔哩粉</span>
+								</label>
+							</a>
+						</li>
+						<li class="mui-table-view-cell" style="position: static;">
+							<a class="mui-navigate-right" style="margin: 0;"> 
+								<label style="line-height: 30px;">
+									<span style="width: 30px;height: 30px;background-color: rgb(97,97,97);display: inline-block;">&nbsp;</span>
+									<span style="font-size: 14px;margin-left: 30px;">优雅灰</span>
+								</label>
+							</a>
+						</li>
+						<li class="mui-table-view-cell" style="">
+							<a class="mui-navigate-right" style="margin: 0;"> 
+								<label style="line-height: 30px;">
+									<span style="width: 30px;height: 30px;background-color: rgb(0,150,136);display: inline-block;">&nbsp;</span>
+									<span style="font-size: 14px;margin-left: 30px;">水鸭青</span>
+								</label>
+							</a>
+						</li>
+					</ul>
+			
+					<!--<form class="mui-input-group">
+						<div class="mui-input-row mui-radio" style="height:50px;">
+							<label style="line-height: 30px;">
+								<span style="width: 30px;height: 30px;background-color: rgb(76,175,80);display: inline-block;">&nbsp;</span>
+								<span style="font-size: 14px;margin-left: 30px;">酷安绿</span>
+							</label>
+							<input name="radio1" type="radio" style="margin-top: 8px;" checked="checked">
+						</div>
+						
+					</form>-->
+				</div>
+				
+			
+				
+				
+				
+			</div>
+			
+			
+			
+			
+    		
+		</div>
+<script>
+	//初始化
+	mui.init({
+	    keyEventBind: {
+	        backbutton: true  // 打开back按键监听
+	    },
+			// 配置具体需要监听的手势事件
+		gestureConfig:{
+			longtap: true,  // 手机端长按事件，默认为 false
+		}
+	});
+		    
+//	var info = document.getElementById("info");
+	document.querySelector('.mui-table-view.mui-table-view-radio').addEventListener('selected',function(e){
+		mui.toast("当前选中的为："+e.detail.el.innerText);
+	});
+
+			
+
+			
+</script>
+				
+	</body>
+</html>
+

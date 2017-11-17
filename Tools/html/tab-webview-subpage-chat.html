@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>百宝侠</title>
+		<script src="../js/mui.min.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/app/index.css" />
+		<link href="../css/iconfont.css" rel="stylesheet" />
+		<script src="../js/jquery-3.1.1.min.js"></script>
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />
+	</head>
+
+	<body>
+		<style>
+			.mui-control-content {
+				background-color: white;
+				min-height: 300px;
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			
+			.mui-col-xs-4 {
+				width: 33.3% !important;
+			}
+			
+			.web-item {
+				height: 75px;
+				border-radius: 5px;
+			}
+			
+			.web-left {
+				width: 69%;
+				height: 100%;
+				float: left;
+			}
+			
+			.web-left-1 {
+				color: #000000;
+				margin-top: 10px;
+				margin-left: 10px;
+				font-size: 14px;
+				text-align: left;
+			}
+			
+			.web-left-2 {
+				font-size: 12px;
+				margin-left: 10px;
+				color: #000000;
+				text-align: left;
+			}
+			
+			.web-right {
+				width: 30%;
+				height: 100%;
+				float: right;
+			}
+			
+			.web-right-img {
+				width: 30px;
+				height: 30px;
+				border-radius: 15px;
+				margin-top: 10px;
+				padding: 5px;
+				color: #FFFFFF;
+			}
+			
+			#popup-content {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				z-index: 9999;
+				background-color: #F3F3F3;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				border-radius: 5px;
+				display: none;
+			}
+		</style>
+		<div id="weather-home-page" class="mui-control-content mui-active" style="min-height: 100px;">
+			<!-- 天气头部区域 -->
+			<header class="mui-bar mui-bar-nav detail-nav" style="height: 50px;">
+				<!--<a class="mui-icon mui-icon-plusempty mui-pull-left add-location select-location my-nav-icon"></a>-->
+				<!--<span class="cur-location">百宝侠</span>-->
+				<a class="iconfont icon-shezhi mui-pull-right shezhi" style="color: #FFFFFF;margin-top: 10px;font-size: 18px;"></a>
+				<!--<a class="mui-icon mui-icon-search mui-pull-right" style="color: #FFFFFF;margin-right: 5%;"></a>-->
+				<div class="city-index-view" style="color: #E8E8E8;width: 65%;margin-top: 30px;margin-left: 5px;">
+					一言汤
+				</div>
+			</header>
+
+			<div class="cur-weather module-tap" id="weather-bg" style="background-color:rgba(27,130,210,255);background-size: cover;">
+				<div class="cur-weather-detail">
+					<div class="cur-weather-detail-left">
+						<div class="city-index-view" style="color: #FFFFFF;width: 90%;margin-top: 10px;font-size: 14px;">
+							<!--
+		                                        一言API（调用文档：https://blog.lwl12.com/read/hitokoto-api.html）
+		                        -->
+							<script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script>
+							<div id="lwlhitokoto" class="mui-ellipsis-2" style="-webkit-line-clamp:3"><script>lwlhitokoto()</script></div>
+						</div>
+					</div>
+				</div>
+				<div class="header-img"></div>
+			</div>
+		</div>
+
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile">
+						生活
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						图集
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						工具
+					</a>
+					
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+
+								<div class="weather-more-info" style="margin-top: 10px;">
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">便签</h5>
+											<h5 class="web-left-2">随手记</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #2AC845;">
+												签
+											</div>
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">计算器</h5>
+											<h5 class="web-left-2">菜市场买菜专用</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #EC971F;">
+												<p style="color: #FFFFFF;font-size: 12px;">算</p>
+											</div>
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">知乎日报</h5>
+											<h5 class="web-left-2"></h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #007AFF;">
+												<p style="color: #FFFFFF;font-size: 10px;">知乎</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">笑话大全</h5>
+											<h5 class="web-left-2">信息搜集整理于互联网</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #2FA8EC;">
+												<p style="color: #FFFFFF;font-size: 10px;">笑</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">历史上的今天</h5>
+											<h5 class="web-left-2">今天发生了什么</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #AD4A5D;">
+												史
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">黄历运势</h5>
+											<h5 class="web-left-2">老黄历</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style=";background-color: #17F8BE;">
+												<p style="color: red;font-size: 10px;">黄历</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item" style="">
+										<div class="web-left" >
+											<h5 class="web-left-1">音乐搜索器</h5>
+											<h5 class="web-left-2">一些音乐商的音乐下载</h5>
+										</div>
+										<div class="web-right" >
+											<div class="web-right-img" style="background-color: #000000;">
+												<p style="color: #FFFFFF;font-size: 10px;">乐</p>
+											</div>
+											<div style="height: 30px;background-color: red;color:#FFFFFF;line-height: 30px;border-radius: 50px 0 0 0;padding-left: 10px;">new</div>
+										</div>
+									</div>
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="weather-more-info" style="margin-top: 10px;">
+									
+									<div class="city-item web-item" style="">
+										<div class="web-left" >
+											<h5 class="web-left-1">百度图片</h5>
+											<h5 class="web-left-2">度娘出品，必数呃...</h5>
+										</div>
+										<div class="web-right" >
+											<div class="web-right-img" style="background-color: #6641E2;">
+												<p style="color: #FFFFFF;font-size: 10px;">度娘</p>
+											</div>
+											<div style="height: 30px;background-color: red;color:#FFFFFF;line-height: 30px;border-radius: 50px 0 0 0;padding-left: 10px;">new</div>
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">GANK妹子</h5>
+											<h5 class="web-left-2"></h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #DD524D;">
+												<p style="color: #FFFFFF;font-size: 10px;">gank</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">妹子图集</h5>
+											<h5 class="web-left-2"></h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #2196F3;">
+												<p style="color: #FFFFFF;font-size: 10px;">妹纸</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">淘女郎模特</h5>
+											<h5 class="web-left-2"></h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #FF8C00;">
+												<p style="color: #FFFFFF;font-size: 10px;">模特</p>
+											</div>
+
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll3" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="weather-more-info" style="margin-top: 10px;">
+
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">MD5加密</h5>
+											<h5 class="web-left-2"></h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #CF2D28;">
+												<p style="color: #FFFFFF;font-size: 10px;">MD5</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">Base64加密解密</h5>
+											<h5 class="web-left-2"></h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #6D6D72;">
+												<p style="color: #FFFFFF;font-size: 10px;">base</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">sha1加密</h5>
+											<h5 class="web-left-2"></h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #34B93D;">
+												<p style="color: #FFFFFF;font-size: 10px;">sha1</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">二维码生成器</h5>
+											<h5 class="web-left-2"></h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #000000;">
+												<p style="color: #FFFFFF;font-size: 10px;">码</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">紫薇星盘</h5>
+											<h5 class="web-left-2">网页套壳</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #6641E2;">
+												<p style="color: #FFFFFF;font-size: 10px;">紫薇</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">零接触</h5>
+											<h5 class="web-left-2">小迷信安慰大全</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #EF3F52;">
+												<p style="color: #FFFFFF;font-size: 12px;">零</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">周公解梦</h5>
+											<h5 class="web-left-2">八卦周易解梦</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color:#AD4A5D;">
+												<p style="color: #FFFFFF;font-size: 12px;">梦</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">2048</h5>
+											<h5 class="web-left-2">无聊打发时间</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #EC971F;">
+												<p style="color: #FFFFFF;font-size: 10px;">2048</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">图片直链获取</h5>
+											<h5 class="web-left-2"></h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #EC971F;">
+												<p style="color: #FFFFFF;font-size: 10px;">pic</p>
+											</div>
+
+										</div>
+									</div>
+									
+									<!--<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">新闻</h5>
+											<h5 class="web-left-2">今日头条，每日搜狐，天天快报</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #000000;">
+												<p style="color: #FFFFFF;font-size: 10px;">微信</p>
+											</div>
+
+										</div>
+									</div>-->
+									<!--<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">小冰</h5>
+											<h5 class="web-left-2">谁请客</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #000000;">
+												<p style="color: #FFFFFF;font-size: 10px;">微信</p>
+											</div>
+
+										</div>
+									</div>-->
+									<!--<div class="city-item web-item">
+										<div class="web-left">
+											<h5 class="web-left-1">石头剪刀布</h5>
+											<h5 class="web-left-2">谁请客</h5>
+										</div>
+										<div class="web-right">
+											<div class="web-right-img" style="background-color: #000000;">
+												<p style="color: #FFFFFF;font-size: 10px;">微信</p>
+											</div>
+
+										</div>
+									</div>-->
+									
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!--<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll4" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-loading">
+									<div class="mui-spinner">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>-->
+				</div>
+			</div>
+
+		</div>
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+
+			var flag = false;
+			var urlFlag = '';
+
+			//移动端back键事件
+			mui.back = function() {
+
+				var btn = ["取消", "确定"];
+				mui.confirm('确定要退出应用程序吗？', '百宝侠', btn, function(e) {
+					if(e.index == 1) {
+						plus.runtime.quit(); // 退出APP
+					}
+				});
+			}
+			//获取时间start
+			setInterval("getTime()", 1000); //每隔一秒执行一次 
+			var weekArray = new Array("日", "一", "二", "三", "四", "五", "六");
+
+			function getTime() {
+				var myDate = new Date();
+				var date = myDate.toLocaleDateString();
+				var week = myDate.getDay();
+				var hours = myDate.getHours();
+				var minutes = myDate.getMinutes();
+				var seconds = myDate.getSeconds();
+				if(minutes < 10) {
+					minutes = '0' + minutes;
+				}
+				if(seconds < 10) {
+					seconds = '0' + seconds;
+				}
+				$("#time").html(hours + ":" + minutes);
+				$("#seconds").html(":" + seconds);
+				$("#date").html(date);
+				$("#week").html('周' + weekArray[week]);
+			}
+			//获取时间end
+
+			(function($) {
+
+				//				document.getElementsByClassName('shezhi')[0].addEventListener('tap', function() {
+				//					plus.webview.open("setting.html");
+				//				});
+
+				var device_height = (screen.height - 241) + 'px';
+				document.getElementById('item1mobile').style.minHeight = device_height;
+				//				document.getElementById('item1mobile').minHeight = device_height+'px';
+				document.getElementById('item2mobile').style.minHeight = device_height;
+				document.getElementById('item3mobile').style.minHeight = device_height;
+
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
+				});
+				//				var html2 = '<div class="weather-more-info" style="margin-top: 10px;"><div class="city-item web-item"><div class="web-left" ><h5 class="web-left-1" >知乎</h5><h5 class="web-left-2" >知识分享社区</h5></div><div class="web-right" ><div class="web-right-img" style="background-color: #2196F3;">知</div></div></div><div class="city-item web-item"><div class="web-left" ><h5 class="web-left-1" >36kr</h5><h5 class="web-left-2" >互联网创业资讯</h5></div><div class="web-right" ><div class="web-right-img" style="background-color: #0062CC;">36</div></div></div></div>';
+				//				var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
+				//				 
+				//				var item2 = document.getElementById('item2mobile');
+				//				var item3 = document.getElementById('item3mobile');
+				//				document.getElementById('slider').addEventListener('slide', function(e) {
+				//					if (e.detail.slideNumber === 1) {
+				//						if (item2.querySelector('.mui-loading')) {
+				//							setTimeout(function() {
+				//								item2.querySelector('.mui-scroll').innerHTML = html2;
+				//							}, 500);
+				//						}
+				//					} else if (e.detail.slideNumber === 2) {
+				//						if (item3.querySelector('.mui-loading')) {
+				//							setTimeout(function() {
+				//								item3.querySelector('.mui-scroll').innerHTML = html3;
+				//							}, 500);
+				//						}
+				//					}
+				//					
+				//				});
+				//				var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+				//				$('.mui-input-group').on('change', 'input', function() {
+				//					if (this.checked) {
+				//						sliderSegmentedControl.className = 'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+				//						//force repaint
+				//						sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+				//					}
+				//				});
+			})(mui);
+
+			mui.plusReady(function() {
+
+				document.getElementsByClassName('city-item')[0].addEventListener('tap', function() {
+					var newWV = plus.webview.create('bianqian.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+
+				document.getElementsByClassName('city-item')[1].addEventListener('tap', function() {
+					//		var _curPage = plus.webview.currentWebview();
+
+					// 打开新页面
+					//		plus.webview.open("html/historyToday.html");
+					var newWV = plus.webview.create('calculator.html', 'new');
+					newWV.show('slide-in-top', 300);
+
+					// 方式二
+					/*mui.openWindow({
+						url:"citysearch.html"
+					});*/
+
+					// 关闭当前页面
+					//		_curPage.close();
+				});
+				document.getElementsByClassName('city-item')[2].addEventListener('tap', function() {
+					var newWV = plus.webview.create('zhihu.html', 'new');
+					newWV.show('slide-in-left', 300);
+
+				});
+				document.getElementsByClassName('city-item')[3].addEventListener('tap', function() {
+					var newWV = plus.webview.create('xiaohua.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+				document.getElementsByClassName('city-item')[4].addEventListener('tap', function() {
+					var newWV = plus.webview.create('historyToday.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+				document.getElementsByClassName('city-item')[5].addEventListener('tap', function() {
+					var newWV = plus.webview.create('almanac.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+				document.getElementsByClassName('city-item')[6].addEventListener('tap', function() {
+					var newWV = plus.webview.create('audio.html', 'new');
+					newWV.show('slide-in-bottom', 300);
+
+				});
+				document.getElementsByClassName('city-item')[7].addEventListener('tap', function() {
+					var newWV = plus.webview.create('bdPicture-class.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+				document.getElementsByClassName('city-item')[8].addEventListener('tap', function() {
+					var newWV = plus.webview.create('gank-girl.html', 'new');
+					newWV.show('slide-in-bottom', 300);
+
+				});
+				document.getElementsByClassName('city-item')[9].addEventListener('tap', function() {
+					var newWV = plus.webview.create('picture.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+				document.getElementsByClassName('city-item')[10].addEventListener('tap', function() {
+					var newWV = plus.webview.create('tb-model.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+				document.getElementsByClassName('city-item')[11].addEventListener('tap', function() {
+					var newWV = plus.webview.create('MD5.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+				document.getElementsByClassName('city-item')[12].addEventListener('tap', function() {
+					var newWV = plus.webview.create('base64.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+				document.getElementsByClassName('city-item')[13].addEventListener('tap', function() {
+					var newWV = plus.webview.create('sha1.html', 'new');
+					newWV.show('slide-in-right', 300);
+
+				});
+				document.getElementsByClassName('city-item')[14].addEventListener('tap', function() {
+					var newWV = plus.webview.create('QRcode.html?url=https://cli.im/mob', 'new');
+					newWV.show('slide-in-bottom', 300);
+
+				});
+				
+				document.getElementsByClassName('city-item')[15].addEventListener('tap', function() {
+					var newWV = plus.webview.create('web_content.html?url=http://m.zuoweb.com/', 'new');
+					newWV.show('slide-in-bottom', 500);
+ 
+				});
+				document.getElementsByClassName('city-item')[16].addEventListener('tap', function() {
+					var newWV = plus.webview.create('web_content.html?url=https://touch.linghit.com/collect', 'new');
+					newWV.show('slide-in-bottom', 500);
+
+				});
+				document.getElementsByClassName('city-item')[17].addEventListener('tap', function() {
+					var newWV = plus.webview.create('web_content.html?url=https://zxcs.linghit.com/zhougongjiemeng/index.html?channel=swxmjm', 'new');
+					newWV.show('slide-in-right', 500);
+				});
+				document.getElementsByClassName('city-item')[18].addEventListener('tap', function() {
+					var newWV = plus.webview.create('2048.html', 'new');
+					newWV.show('slide-in-bottom', 300);
+
+				});
+				document.getElementsByClassName('city-item')[19].addEventListener('tap', function() {
+					var newWV = plus.webview.create('uploader.html', 'new');
+					newWV.show('slide-in-bottom', 300);
+
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,1078 @@
+{
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
+	"id": "H5748E3FF",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"name": "百宝侠",/*应用名称，程序桌面图标名称*/
+	"version": {
+		"name": "2.3",/*应用版本名称*/
+		"code": ""
+	},
+	"description": "一个简单的工具箱",/*应用描述信息*/
+	"icons": {
+		"72": "icon.png"
+	},
+	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"developer": {
+		"name": "",/*开发者名称*/
+		"email": "",/*开发者邮箱地址*/
+		"url": ""
+	},
+	"permissions": {
+		
+		"Audio": {
+			"description": "访问麦克风"
+		},
+
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+		
+
+		"Downloader": {
+			"description": "文件下载管理"
+		},
+		"Events": {
+			"description": "应用扩展事件"
+		},
+		"File": {
+			"description": "访问本地文件系统"
+		},
+		
+		"Geolocation": {},
+		"Invocation": {
+			"description": "使用Native.js能力"
+		},
+		
+		
+		"Storage": {
+			"description": "管理应用本地数据"
+		},
+
+
+		"Runtime": {
+			"description": "访问运行期环境"
+		},
+		"XMLHttpRequest": {
+			"description": "跨域网络访问"
+		},
+		
+
+		"Maps": {
+			"description": "管理地图插件"
+		},
+
+		"Webview": {
+			"description": "窗口管理"
+		},
+		"NativeUI": {
+			"description": "原生UI控件"
+		},
+		"Navigator": {
+			"description": "浏览器信息"
+		},
+		"NativeObj": {
+			"description": "原生对象"
+		},
+		"Device": {},"Gallery":{},"Camera":{},"Uploader":{}
+	},
+	"plus": {
+		"launchwebview": {
+			"bottom": "0px",
+			"background": "#fff",
+			"subNViews": [
+				{
+					"id": "tabBar1",
+					"styles": {
+						"bottom": "0px",
+						"left": "0",
+						"height": "50px",
+						"width": "26%",
+						"backgroundColor": "#fff"
+					},
+					"tags": [
+						{
+							"tag": "font",
+							"id": "tabBar11",
+							"text": "\ue65d",
+							"position": {
+								"top": "4px",
+								"left": "0",
+								"width": "100%",
+								"height": "24px"
+							},
+							"textStyles": {
+								"fontSrc": "_www/fonts/iconfont.ttf",
+								"align": "center",
+								"size": "18px"
+							}
+						}, {
+							"tag": "font",
+							"id": "tabBar12",
+							"text": "推荐",
+							"position": {
+								"top": "23px",
+								"left": "0",
+								"width": "100%",
+								"height": "24px"
+							},
+							"textStyles": {
+								"align": "center",
+								"size": "10px"
+							}
+						}
+					]
+				}, {
+					"id": "tabBar2",
+					"styles": {
+						"bottom": "0px",
+						"left": "25%",
+						"height": "50px",
+						"width": "26%",
+						"backgroundColor": "#fff"
+					},
+					"tags": [
+						{
+							"tag": "font",
+							"id": "tabBar21",
+							"text": "\ue65a",
+							"position": {
+								"top": "4px",
+								"left": "-20px",
+								"width": "100%",
+								"height": "24px"
+							},
+							"textStyles": {
+								"fontSrc": "_www/fonts/iconfont.ttf",
+								"align": "center",
+								"size": "20px"
+							}
+						}, {
+							"tag": "font",
+							"id": "tabBar22",
+							"text": "百宝侠",
+							"position": {
+								"top": "23px",
+								"left": "-20px",
+								"width": "100%",
+								"height": "24px"
+							},
+							"textStyles": {
+								"align": "center",
+								"size": "10px"
+							}
+						}
+					]
+				}, {
+					"id": "tabBar3",
+					"styles": {
+						"bottom": "0px",
+						"left": "50%",
+						"height": "50px",
+						"width": "26%",
+						"backgroundColor": "#fff"
+					},
+					"tags": [
+						{
+							"tag": "font",
+							"id": "tabBar31",
+							"text": "\ue601",
+							"position": {
+								"top": "4px",
+								"left": "20px",
+								"width": "100%",
+								"height": "24px"
+							},
+							"textStyles": {
+								"fontSrc": "_www/fonts/iconfont.ttf",
+								"align": "center",
+								"size": "22px"
+							}
+						}, {
+							"tag": "font",
+							"id": "tabBar32",
+							"text": "本地天气",
+							"position": {
+								"top": "24px",
+								"left": "20px",
+								"width": "100%",
+								"height": "24px"
+							},
+							"textStyles": {
+								"align": "center",
+								"size": "10px"
+							}
+						}
+					]
+				}, {
+					"id": "tabBar4",
+					"styles": {
+						"bottom": "0px",
+						"left": "75%",
+						"height": "50px",
+						"width": "26%",
+						"backgroundColor": "#fff"
+					},
+					"tags": [
+						{
+							"tag": "font",
+							"id": "tabBar41",
+							"text": "\ue66f",
+							"position": {
+								"top": "4px",
+								"left": "0",
+								"width": "100%",
+								"height": "24px"
+							},
+							"textStyles": {
+								"fontSrc": "_www/fonts/iconfont.ttf",
+								"align": "center",
+								"size": "28px"
+							}
+						}, {
+							"tag": "font",
+							"id": "tabBar42",
+							"text": "酷安",
+							"position": {
+								"top": "24px",
+								"left": "0",
+								"width": "100%",
+								"height": "24px"
+							},
+							"textStyles": {
+								"align": "center",
+								"size": "10px"
+							}
+						}
+					]
+				}, {
+					"id": "tabBar5",
+					"styles": {
+						"bottom": "50px",
+						"left": "0",
+						"height": "1px",
+						"width": "100%",
+						"backgroundColor": "#ccc"
+					},
+					"tags": [
+						{
+							"tag": "rect",
+							"id": "tabBorder",
+							"position": {
+								"top": "0",
+								"left": "0",
+								"width": "100%",
+								"height": "1px"
+							},
+							"rectStyles": {
+								"color": "#ccc"
+							}
+						}
+					]
+				}
+			]
+		},
+		"splashscreen": {
+			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+			"waiting": false,
+			"delay": "0"
+		},
+		"popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+		"distribute": {
+			"apple": {
+				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+				"mobileprovision": "",/*iOS应用打包配置文件*/
+				"password": "",/*iOS应用打包个人证书导入密码*/
+				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+				"frameworks": []
+			},
+			"google": {
+				"packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+				"keystore": "",/*Android应用打包使用的密钥库文件*/
+				"password": "",/*Android应用打包使用密钥库中证书的密码*/
+				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+				"permissions": ["<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.INTERNET\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
+			},
+			"orientation": [
+				"portrait-primary"
+			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"icons": {
+				"ios": {
+					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					"iphone": {
+						"normal": "unpackage/res/icons/57x57.png", /*iPhone3/3GS程序图标，分辨率：57x57*/
+						"retina": "unpackage/res/icons/114x114.png", /*iPhone4程序图标，分辨率：114x114*/
+						"retina7": "unpackage/res/icons/120x120.png", /*iPhone4S/5/6程序图标，分辨率：120x120*/
+						"retina8": "unpackage/res/icons/180x180.png", /*iPhone6 Plus程序图标，分辨率：180x180*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png", /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone4设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png", /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+						"settings-retina8": "unpackage/res/icons/87x87.png"
+					},
+					"ipad": {
+						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
+					}
+				},
+				"android": {
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png",
+					"xxxhdpi": "unpackage/res/icons/192x192.png"
+				}
+			},
+			"splashscreen": {
+				"ios": {
+					"iphone": {
+						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+						"retina47": "",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+						"retina55": "",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+						"retina55l": ""
+					},
+					"ipad": {
+						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": ""
+					}
+				},
+				"android": {
+					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
+					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
+					"hdpi": "D:/Workspaces/HBuilderProject/480.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "D:/Workspaces/HBuilderProject/720.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "D:/Workspaces/HBuilderProject/1080.png"
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"html/tab-webview-subpage-about.html",
+					"fonts/mui.ttf",
+					"fonts/iconfont.ttf",
+					"html/tab-webview-subpage-chat.html",
+					"js/util.js",
+					"js/jquery-3.1.1.min.js",
+					"images/chifan.gif",
+					"css/iconfont.css",
+					"css/app/index.css",
+					"js/app/index.js",
+					"css/app/default.css",
+					"css/app/dark-theme.css",
+					"js/app/theme.js"
+				],
+				"refer": [
+					"html/tab-webview-subpage-contact.html",
+					"html/new-webview.html",
+					"html/historyToday.html",
+					"html/cards.html",
+					"html/bianqian.html",
+					"html/sha1.html",
+					"html/base64.html",
+					"html/HTML5.html",
+					"html/setting.html",
+					"html/MD5.html",
+					"html/picture.html",
+					"html/tb-model.html",
+					"html/2048.html",
+					"html/shuaxin.html",
+					"html/calculator.html",
+					"html/gank-girl.html",
+					"html/almanac.html",
+					"html/bdPicture-class.html",
+					"html/audio.html",
+					"html/uploader.html"
+				],
+				"priority": 0
+			},
+			"launch.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"html/tab-webview-subpage-about.html"
+				],
+				"refer": [
+					"html/tab-webview-subpage-setting.html",
+					"html/tab-webview-subpage-chat.html",
+					"html/tab-webview-subpage-contact.html"
+				],
+				"priority": 0
+			},
+			"html/tab-webview-subpage-setting.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/mui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/tab-webview-subpage-about.html": {
+				"resources": [
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"js/util.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/tab-webview-subpage-chat.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/iconfont.css",
+					"css/app/index.css",
+					"images/chifan.gif",
+					"fonts/iconfont.ttf",
+					"css/app/default.css",
+					"js/jquery-3.1.1.min.js"
+				],
+				"refer": [
+					"html/newUrlContent.html",
+					"html/setting.html",
+					"html/web_content.html",
+					"html/bianqian.html",
+					"html/calculator.html",
+					"html/gank-girl.html",
+					"html/2048.html",
+					"html/almanac.html",
+					"html/picture.html",
+					"html/tb-model.html",
+					"html/MD5.html",
+					"html/base64.html",
+					"html/sha1.html",
+					"html/QRcode.html",
+					"html/xiaohua.html",
+					"html/historyToday.html",
+					"html/news.html",
+					"html/zhihu.html",
+					"html/music.html",
+					"html/audio.html",
+					"html/bdPicture-class.html",
+					"html/uploader.html"
+				],
+				"priority": 0
+			},
+			"html/tab-webview-subpage-contact.html": {
+				"resources": [
+					"images/60x60.gif",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/aqi.png",
+					"images/yd.png",
+					"images/car_wash.png",
+					"images/pp.png",
+					"images/ganmao.png",
+					"images/dress.png",
+					"images/calendar.png",
+					"images/sun_rays.png",
+					"css/app/default.css",
+					"css/app/weather.css",
+					"js/app/lunar.js",
+					"fonts/mui.ttf",
+					"js/jquery-3.1.1.min.js",
+					"images/huaji.png",
+					"images/chifan.gif",
+					"images/weather-bg/weather2.jpg",
+					"images/weather-imgicon/3.png",
+					"images/weather-imgicon/2.png",
+					"images/weather-bg/weather0.jpg",
+					"images/weather-bg/weather112.jpg",
+					"images/weather-imgicon/8.png",
+					"images/weather-imgicon/1.png",
+					"images/weather-imgicon/7.png",
+					"images/weather-imgicon/0.png",
+					"images/weather-imgicon/moon.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/new-webview.html": {
+				"resources": [
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"js/jquery-3.1.1.min.js",
+					"images/chifan.gif",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf",
+					"css/app/default.css",
+					"css/app/index.css",
+					"css/cards/component.css",
+					"js/cards/classie.js",
+					"js/app/historyToday.js"
+				],
+				"refer": [
+					"html/newUrlContent.html"
+				],
+				"priority": 0
+			},
+			"html/historyToday.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"css/app/historyToday.css",
+					"css/cards/component.css",
+					"js/cards/classie.js",
+					"js/app/historyToday.js",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"fonts/iconfont.ttf",
+					"css/app/default.css",
+					"css/app/index.css",
+					"images/chifan.gif",
+					"images/huaji.png"
+				],
+				"refer": [
+					"index.html"
+				],
+				"priority": 0
+			},
+			"html/bianqian.html": {
+				"resources": [
+					"js/app/shortnote.js",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"css/app/shortnote.css",
+					"css/app/index.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"html/editnote.html",
+					"html/notedetail.html"
+				],
+				"priority": 0
+			},
+			"html/editnote.html": {
+				"resources": [
+					"js/app/editnote.js",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/app/editnote.css",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"html/bianqian.html"
+				],
+				"priority": 0
+			},
+			"html/sha1.html": {
+				"resources": [
+					"js/clipboard.min.js",
+					"js/jquery-3.1.1.min.js",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"js/sha1.js",
+					"css/mui.min.css",
+					"fonts/iconfont.ttf",
+					"css/app/historyToday.css",
+					"js/mui.min.js",
+					"css/app/default.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/base64.html": {
+				"resources": [
+					"js/base64.js",
+					"js/clipboard.min.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"css/app/historyToday.css",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"fonts/iconfont.ttf",
+					"css/app/default.css"
+				],
+				"refer": [
+					"index.html"
+				],
+				"priority": 0
+			},
+			"html/HTML5.html": {
+				"resources": [
+					"js/jquery-3.1.1.min.js",
+					"css/mui.min.css",
+					"js/cards.js",
+					"css/app/historyToday.css",
+					"css/cards/style.css",
+					"js/mui.min.js",
+					"css/app/default.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/cards.html": {
+				"resources": [
+					"css/cards/styles.css",
+					"js/jquery-3.1.1.min.js",
+					"js/cards/stopExecutionOnTimeout.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/setting.html": {
+				"resources": [
+					"js/base64.js",
+					"js/clipboard.min.js",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"css/app/setting.css",
+					"js/app/theme.js",
+					"css/app/app.css",
+					"css/app/default.css",
+					"css/app/dark-theme.css",
+					"js/app/setting.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"html/bianqian.html",
+					"html/themeSelect.html"
+				],
+				"priority": 0
+			},
+			"html/MD5.html": {
+				"resources": [
+					"js/clipboard.min.js",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"fonts/iconfont.ttf",
+					"css/app/historyToday.css",
+					"js/md5.js",
+					"css/app/default.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/picture.html": {
+				"resources": [
+					"images/search-bg.jpg",
+					"js/app/mui.pullToRefresh.material.js",
+					"css/mui.min.css",
+					"js/app/mui.pullToRefresh.js",
+					"images/bg.jpg",
+					"js/app/picture.js",
+					"css/app/picture.css",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/app/index.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"html/pictureDetail.html"
+				],
+				"priority": 0
+			},
+			"html/pictureDetail.html": {
+				"resources": [
+					"js/mui.zoom.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/mui.previewimage.js",
+					"images/bg.jpg",
+					"js/app/pictureDetail.js",
+					"js/jquery-3.1.1.min.js",
+					"images/city5.jpg",
+					"js/touch.min.js",
+					"images/attention.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/tb-model.html": {
+				"resources": [
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/app/picture.css",
+					"css/mui.min.css",
+					"css/app/index.css"
+				],
+				"refer": [
+					"html/tb-Detail.html"
+				],
+				"priority": 0
+			},
+			"html/tb-Detail.html": {
+				"resources": [
+					"js/mui.zoom.js",
+					"js/app/pictureDetail.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/mui.previewimage.js",
+					"js/app/tb-Detail.js",
+					"images/huaji.png",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"js/app/mui.pullToRefresh.material.js",
+					"js/app/mui.pullToRefresh.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/themeSelect.html": {
+				"resources": [
+					"css/app/dark-theme.css",
+					"js/jquery-3.1.1.min.js",
+					"js/app/setting.js",
+					"js/mui.min.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"css/app/default.css",
+					"css/app/setting.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/newUrlContent.html": {
+				"resources": [
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"css/app/default.css",
+					"js/base64.js",
+					"js/clipboard.min.js",
+					"html/base64.html",
+					"fonts/mui.ttf",
+					"fonts/iconfont.ttf",
+					"css/app/historyToday.css"
+				],
+				"refer": [
+					"html/tab-webview-subpage-chat.html",
+					"index.html",
+					"html/new-webview.html"
+				],
+				"priority": 0
+			},
+			"html/2048.html": {
+				"resources": [
+					"css/app/2048.css",
+					"css/iconfont.css",
+					"css/mui.min.css",
+					"js/app/2048.js",
+					"js/mui.min.js",
+					"css/app/default.css",
+					"js/jquery-3.1.1.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/web_content.html": {
+				"resources": [
+					"js/base64.js",
+					"js/clipboard.min.js",
+					"css/mui.min.css",
+					"css/app/historyToday.css",
+					"fonts/mui.ttf",
+					"css/app/default.css",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/shuaxin.html": {
+				"resources": [
+					"css/shuaxin/images/bg.jpg",
+					"js/shuaxin/minirefresh.theme.taobao.js",
+					"js/shuaxin/minirefresh.js",
+					"css/shuaxin/images/0.png",
+					"css/shuaxin/minirefresh.css",
+					"js/shuaxin/common.js",
+					"css/shuaxin/minirefresh.theme.taobao.css",
+					"css/shuaxin/common.css",
+					"js/mui.min.js",
+					"js/jquery-3.1.1.min.js",
+					"css/app/picture.css",
+					"css/mui.min.css",
+					"css/app/default.css",
+					"css/shuaxin/images/11.jpg",
+					"css/shuaxin/images/12.jpg",
+					"css/shuaxin/images/13.jpg",
+					"css/shuaxin/images/14.jpg",
+					"css/shuaxin/images/15.jpg",
+					"css/shuaxin/images/16.jpg",
+					"css/shuaxin/images/taobao-bg.jpg",
+					"css/shuaxin/images/huaji.jpg",
+					"css/shuaxin/images/huaji.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/calculator.html": {
+				"resources": [
+					"css/calculator/creative.css",
+					"css/calculator/htmleaf-demo.css",
+					"js/calculator/calculate.js",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/gank-girl.html": {
+				"resources": [
+					"js/shuaxin/minirefresh.theme.taobao.js",
+					"js/shuaxin/minirefresh.js",
+					"css/shuaxin/images/huaji.png",
+					"css/shuaxin/minirefresh.css",
+					"js/shuaxin/common.js",
+					"css/mui.min.css",
+					"css/shuaxin/minirefresh.theme.taobao.css",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/app/default.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/almanac.html": {
+				"resources": [
+					"css/mui.min.css",
+					"css/app/historyToday.css",
+					"css/cards/component.css",
+					"js/cards/classie.js",
+					"js/app/historyToday.js",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"images/chifan.gif",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/app/default.css",
+					"css/app/index.css",
+					"js/app/almanac.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/QRcode.html": {
+				"resources": [
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/app/default.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/xiaohua.html": {
+				"resources": [
+					"js/app/mui.pullToRefresh.material.js",
+					"css/mui.min.css",
+					"js/app/mui.pullToRefresh.js",
+					"js/mui.min.js",
+					"css/app/default.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/news.html": {
+				"resources": [
+					"js/app/mui.pullToRefresh.material.js",
+					"css/mui.min.css",
+					"js/app/mui.pullToRefresh.js",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/app/default.css",
+					"css/app/2048.css",
+					"css/iconfont.css",
+					"js/app/2048.js",
+					"html/2048.html",
+					"html/zhihu.html"
+				],
+				"refer": [
+					"html/web_content.html"
+				],
+				"priority": 0
+			},
+			"html/zhihu.html": {
+				"resources": [
+					"js/app/mui.pullToRefresh.material.js",
+					"css/mui.min.css",
+					"js/app/mui.pullToRefresh.js",
+					"css/shuaxin/images/16.jpg",
+					"js/mui.min.js",
+					"css/app/default.css",
+					"css/lunbo/htmleaf-demo.css",
+					"css/lunbo/normalize.css",
+					"css/lunbo/style.css",
+					"js/jquery-3.1.1.min.js",
+					"css/lunbo/slider.js",
+					"css/lunbo/hammer.min.js",
+					"html/news.html",
+					"html/tab-webview-subpage-chat.html"
+				],
+				"refer": [
+					"html/sha1.html",
+					"html/zhihuDetail.html"
+				],
+				"priority": 0
+			},
+			"html/zhihuDetail.html": {
+				"resources": [
+					"css/mui.min.css",
+					"css/app/default.css",
+					"js/mui.min.js",
+					"css/shuaxin/images/16.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/music.html": {
+				"resources": [
+					"js/shuaxin/minirefresh.theme.taobao.js",
+					"css/shuaxin/images/16.jpg",
+					"js/shuaxin/minirefresh.js",
+					"fonts/mui.ttf",
+					"css/shuaxin/minirefresh.css",
+					"css/shuaxin/minirefresh.theme.taobao.css",
+					"css/mui.min.css",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/app/default.css",
+					"js/app/music.js",
+					"css/shuaxin/images/huaji.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/audio.html": {
+				"resources": [
+					"css/shuaxin/images/16.jpg",
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/app/default.css",
+					"js/jquery-3.1.1.min.js",
+					"css/shuaxin/images/huaji.png",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf",
+					"js/app/audio.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/bdPicture-class.html": {
+				"resources": [
+					"css/app/picture.css",
+					"css/mui.min.css",
+					"css/app/index.css",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js"
+				],
+				"refer": [
+					"html/tb-Detail.html",
+					"html/bdPicture-detail.html"
+				],
+				"priority": 0
+			},
+			"html/bdPicture-detail.html": {
+				"resources": [
+					"js/shuaxin/minirefresh.theme.taobao.js",
+					"js/shuaxin/minirefresh.js",
+					"css/shuaxin/images/huaji.png",
+					"css/shuaxin/minirefresh.css",
+					"js/shuaxin/common.js",
+					"css/app/default.css",
+					"css/shuaxin/minirefresh.theme.taobao.css",
+					"js/jquery-3.1.1.min.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/app/bdPicture-common.js",
+					"images/chifan.gif",
+					"images/huaji.png"
+				],
+				"refer": [
+					"html/zhihu.html",
+					"html/bdPicture-detail.html"
+				],
+				"priority": 0
+			},
+			"html/uploader.html": {
+				"resources": [
+					"js/uploader/immersed.js",
+					"js/uploader/common.js",
+					"js/uploader/common.css",
+					"css/app/default.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"html/uploader_ret.html"
+				],
+				"priority": 0
+			},
+			"html/uploader_ret.html": {
+				"resources": [
+					"js/uploader/common.css",
+					"js/uploader/immersed.js",
+					"js/uploader/common.js",
+					"css/app/default.css",
+					"css/app/historyToday.css",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf",
+					"js/clipboard.min.js",
+					"js/mui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"js/mui.js",
+				"css/mui.css"
+			]
+		}
+	},
+	"fullscreen": true,
+	"unpackage": [
+		"css/mui.css",
+		"js/mui.js"
+	]
+}

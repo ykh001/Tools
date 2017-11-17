@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>知乎日报</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />
+		<!--知乎官方css-->
+		<link rel="stylesheet" href="http://news-at.zhihu.com//css//news_qa.auto.css?v=4b3e3" />
+		<style>
+			.headline {
+				display: none;
+			}
+			
+			.content-inner {
+				/*border: 1px solid red ;*/
+			}
+			
+			.neiqian {
+				/*height: 250px;*/
+			}
+			
+			#neiqian-img,
+			.neiqianImg {
+				/*margin-top: 50px;*/
+				width: 100%;
+				/*height: 100%;*/
+			}
+			
+			#neiqian-p {
+				display: block;
+				color: #FFFFFF;
+				/*padding: 5px 10px;*/
+				font-size: 20px;
+				letter-spacing: 3px;
+				line-height: 30px;
+				background-color: #000000;
+			}
+			.view-more,
+			.bottom-recommend {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 头部区域 -->
+		<!--<header class="mui-bar mui-bar-nav detail-nav">
+			<h1 class="mui-title" style="text-align: left;left: 10px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">知乎日报</h1>
+		</header>-->
+		<!--//内嵌图-->
+		<div class="neiqian">
+			<img id="neiqian-img" src="../css/shuaxin/images/16.jpg" />
+			<p id="neiqian-p" class="mui-ellipsis:3"></p>
+		</div>
+		<div class="mui-content" id="content">
+
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init();
+
+			(function($) {
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+
+				$.ready(function() {
+					var id = GetQueryString("ID");
+
+					mui.ajax({
+						url: "https://news-at.zhihu.com/api/4/news/" + id + "?jsoncallback=?",
+						type: "get",
+						async: true,
+						dataType: "json",
+						jsonp: "jsoncallback",
+						timeout: 1000,
+						success: function(data) {
+							var dataJ = data.body;
+							//							alert(dataJ)
+							document.getElementById('content').innerHTML = dataJ
+							
+//							data.image.toString()
+							document.getElementById('neiqian-img').setAttribute('src', data.image.toString());
+//							document.getElementById('neiqian-img').setAttribute('src', data.images);
+							document.getElementById('neiqian-p').innerHTML = data.title;
+							
+						},
+						error: function(xhr, type, errorThrown) {
+							plus.nativeUI.toast(errorThrown);
+						}
+					});
+
+				});
+			})(mui);
+
+			//获取地址栏参数
+			function GetQueryString(name) {
+				//   var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+				//   var r = window.location.search.substr(1).match(reg);
+				//   if(r!=null)return  unescape(r[2]); return null;
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return decodeURI(r[2]);
+				return null;
+			}
+		</script>
+	</body>
+
+</html>

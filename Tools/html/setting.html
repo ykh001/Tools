@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/app/setting.css" rel="stylesheet" />
+		<link href="../css/iconfont.css" rel="stylesheet"/>
+		<!--<link rel="stylesheet" href="css/checkstyle.css" />-->
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js" ></script>
+		<script type="text/javascript" src="../js/app/setting.js" ></script>
+		
+		<!--<script type="text/javascript" src="../js/app/theme.js" ></script>-->
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />
+		<link title="dark" rel="stylesheet" type="text/css" href="../css/app/dark-theme.css" disabled="disabled" /> 
+		<script type="text/javascript" src="../js/app/theme.js" ></script>
+		<style>
+			.mui-popover {
+				height: 300px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<!-- 头部区域 -->
+		<header class="mui-bar mui-bar-nav detail-nav">
+			<!--<a class="back-home mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;font-size: 18px;padding-top: 17px;"></a>-->
+			<h1 class="mui-title" style="text-align: left;left: 20px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">设置</h1>
+		</header>
+		<!-- 内容区域  -->		
+		<div class="mui-content" style="padding-top: 40px;">
+			
+			<div class="MD5-content" style="height: 300px;">
+				<p class="pp" style="color: rgba(27,130,210,255);">界面</p>
+				<!--<div class="set-select">
+					<span>夜间模式</span>
+					<span class="check-position" id="theme-dark">
+					    <input type="checkbox" id="cbtest" />
+					    <label for="cbtest" class="check-box"></label> 
+					</span>
+					
+				</div>-->
+				<ul class="mui-table-view" >
+					<li class="mui-table-view-cell" style="padding-left: 10px;">
+						<span style="font-size: 14px;">夜间模式</span>
+						<div class="mui-switch mui-switch-blue mui-switch-mini " id="dark">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+				<!--<ul class="mui-table-view" >
+					<li class="mui-table-view-cell" style="padding-left: 10px;">
+						<a href="#middlePopover" style="margin-left: 0;padding-left: 0;">
+							<span style="font-size: 14px;">主题颜色</span>
+							<p class="set-two">设置白天主题的颜色</p>
+							
+						</a>
+					</li>
+				</ul>
+				
+				<div id="middlePopover" class="mui-popover">
+					<div class="mui-popover-arrow"></div>
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell"><a href="#">酷安绿</a>
+								</li>
+								<li class="mui-table-view-cell"><a href="#">Item2</a>
+								</li>
+								<li class="mui-table-view-cell"><a href="#">Item3</a>
+								</li>
+								<li class="mui-table-view-cell"><a href="#">Item4</a>
+								</li>
+								<li class="mui-table-view-cell"><a href="#">Item5</a>
+								</li>
+								<li class="mui-table-view-cell"><a href="#">Item6</a>
+								</li>
+								<li class="mui-table-view-cell"><a href="#">Item7</a>
+								</li>
+								<li class="mui-table-view-cell"><a href="#">Item8</a>
+								</li>
+								<li class="mui-table-view-cell"><a href="#">Item9</a>
+								</li>
+								<li class="mui-table-view-cell"><a href="#">Item10</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>-->
+				<div class="set-select" id="theme" style="margin-top: 10px;">
+					<span style="font-size: 14px;">主题颜色</span>
+					<p class="set-two">设置白天主题的颜色</p>
+				</div>
+				
+				<div class="set-select" style="margin-top: 10px;">
+					<span>扁平化</span>
+					
+					<span class="check-position">
+					    <input type="checkbox" id="cbtest" />
+					    <label for="cbtest" class="check-box"></label> 
+					</span>
+					<p class="set-two">开启扁平化风格，取消质感</p>
+				</div>
+				<div class="set-select" style="margin-top: 10px;">
+					<span>圆润设置</span>
+					
+					<span class="check-position">
+					    <input type="checkbox" id="cbtest" />
+					    <label for="cbtest" class="check-box"></label> 
+					</span>
+					<p class="set-two">列表卡片进行圆角化</p>
+				</div>
+				
+			</div>
+			
+			<div class="MD5-content" style="height: 300px;">
+				<p class="pp" style="color: rgba(27,130,210,255);">更多</p>
+				<div class="set-select">
+					<span>开发者模式</span>
+				</div>
+				<div class="set-select">
+					<span>关于</span>
+					<p class="set-two">版本介绍</p>
+				</div>
+				<div class="set-select">
+					<span>分享</span>
+				</div>
+				<div class="set-select">
+					<span>检查更新</span>
+					<p class="set-two">当前已是最新版本</p>
+				</div>
+				
+				
+				
+			</div>
+			
+			
+    		
+		</div>
+<script>
+	//初始化
+	mui.init({
+	    keyEventBind: {
+	        backbutton: true  // 打开back按键监听
+	    },
+			// 配置具体需要监听的手势事件
+		gestureConfig:{
+			longtap: true,  // 手机端长按事件，默认为 false
+		}
+	});
+		    
+	mui('.mui-scroll-wrapper').scroll();
+	mui('body').on('shown', '.mui-popover', function(e) {
+		//console.log('shown', e.detail.id);//detail为当前popover元素
+	});
+	mui('body').on('hidden', '.mui-popover', function(e) {
+		//console.log('hidden', e.detail.id);//detail为当前popover元素
+	});	
+	
+//	mui("#middlePopover").on('tap',".mui-table-view-cell",function(){
+//
+//		document.getElementById("middlePopover").classList.remove('mui-active');
+////		alert(this.firstChild.innerHTML);
+//		
+//	});
+
+//	mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,100);//100毫秒滚动到顶		
+
+			
+</script>
+				
+	</body>
+</html>
+

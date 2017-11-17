@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>淘女郎</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/app/index.css" />
+		<link rel="stylesheet" href="../css/app/picture.css">
+		<style>
+			.mui-control-content {
+				background-color: white;
+				min-height: 300px;
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			
+			.mui-col-xs-4 {
+				width: 25% !important;
+			}
+			
+			.web-item {
+				height: 75px;
+				border-radius: 5px;
+			}
+			
+			.web-left {
+				width: 49%;
+				height: 100%;
+				float: left;
+			}
+			
+			.web-left-1 {
+				color: #000000;
+				margin-top: 20px;
+				margin-left: 10px;
+				font-size: 14px;
+				text-align: left;
+			}
+			
+			.web-left-2 {
+				font-size: 12px;
+				margin-left: 10px;
+				color: #000000;
+				text-align: left;
+			}
+			
+			.web-right {
+				width: 50%;
+				height: 100%;
+				float: right;
+			}
+			
+			.web-right-img {
+				width: 60px;
+				height: 60px;
+				border-radius: 15px;
+				/*margin-top: 10px;*/
+				padding: 5px;
+				color: #FFFFFF;
+				background-size: contain;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav detail-nav">
+			<!--<a class="back-home mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;font-size: 18px;padding-top: 17px;"></a>-->
+			<h1 class="mui-title" style="text-align: left;left: 20px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">淘女郎</h1>
+		</header>
+		<div class="mui-content">
+			<div class="weather-more-info" style="margin-top: 10px;">
+				
+				<div class="city-item web-item" onclick="toDetail('欧美')">
+					<div class="web-left">
+						<h5 class="web-left-1">欧美</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img02.taobaocdn.com/imgextra/i2/1070000210/TB1lQ2wHVXXXXcXXFXXXXXXXXXX_!!1070000210-0-tstar.jpg_620x10000.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('韩版')">
+					<div class="web-left">
+						<h5 class="web-left-1">韩版</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img01.taobaocdn.com/imgextra/i1/2458924165/TB1FHatHpXXXXajaFXXXXXXXXXX_!!2458924165-0-tstar.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('日系')">
+					<div class="web-left">
+						<h5 class="web-left-1">日系</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img01.taobaocdn.com/imgextra/i1/2457577440/TB1.jTrIXXXXXbCXXXXXXXXXXXX_!!2457577440-0-tstar.jpg_620x10000.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('英伦')">
+					<div class="web-left">
+						<h5 class="web-left-1">英伦</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img02.taobaocdn.com/imgextra/i2/789607093/TB1rpAYGVXXXXbaapXXXXXXXXXX_!!789607093-0-tstar.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('OL风')">
+					<div class="web-left">
+						<h5 class="web-left-1">OL风</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="https://img.alicdn.com/imgextra/i3/906003706/TB1vTfjHVXXXXaOXVXXXXXXXXXX_!!906003706-0-tstar.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('学院')">
+					<div class="web-left">
+						<h5 class="web-left-1">学院</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://gtd.alicdn.com/sns_logo/i1/TB1BK8lHFXXXXcHXXXXSutbFXXX.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('淑女')">
+					<div class="web-left">
+						<h5 class="web-left-1">淑女</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="https://img.alicdn.com/imgextra/i3/1829009168/TB1dMggHVXXXXaEXXXXXXXXXXXX_!!1829009168-0-tstar.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('性感')">
+					<div class="web-left">
+						<h5 class="web-left-1">性感</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://gtd.alicdn.com/sns_logo/i4/TB1.n1mHpXXXXbZaXXXSutbFXXX.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('复古')">
+					<div class="web-left">
+						<h5 class="web-left-1">复古</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img04.taobaocdn.com/imgextra/i4/2248977109/TB1zleWIXXXXXaUXpXXXXXXXXXX_!!2248977109-0-tstar.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('街头')">
+					<div class="web-left">
+						<h5 class="web-left-1">街头</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img04.taobaocdn.com/imgextra/i4/75541195/TB1MBVLHFXXXXcqaXXXXXXXXXXX_!!75541195-0-tstar.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('休闲')">
+					<div class="web-left">
+						<h5 class="web-left-1">休闲</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img.alicdn.com/sns_logo/i2/TB1gzvPHpXXXXbEaXXXSutbFXXX.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('民族')">
+					<div class="web-left">
+						<h5 class="web-left-1">民族</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img03.taobaocdn.com/imgextra/i3/1137313727/TB1T2z_GpXXXXXKaXXXXXXXXXXX_!!1137313727-0-tstar.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('甜美')">
+					<div class="web-left">
+						<h5 class="web-left-1">甜美</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://gtd.alicdn.com/sns_logo/i1/TB1B1j7HFXXXXb2XVXXSutbFXXX.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('运动')">
+					<div class="web-left">
+						<h5 class="web-left-1">运动</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img03.taobaocdn.com/imgextra/i3/1739142047/TB10tpqHpXXXXbYXXXXXXXXXXXX_!!1739142047-0-tstar.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('可爱')">
+					<div class="web-left">
+						<h5 class="web-left-1">可爱</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img.alicdn.com/sns_logo/i8/TB1O93fHXXXXXbgapXXSutbFXXX.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('大码')">
+					<div class="web-left">
+						<h5 class="web-left-1">大码</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img.alicdn.com/sns_logo/T1GPxTFxXXXXb1upjX.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('中老年')">
+					<div class="web-left">
+						<h5 class="web-left-1">中老年</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img01.taobaocdn.com/imgextra/i1/2230531687/TB102EnGXXXXXc8aXXXXXXXXXXX_!!2230531687-0-tstar.jpg_620x10000.jpg"/>
+							
+
+					</div>
+				</div>
+				<div class="city-item web-item" onclick="toDetail('其他')">
+					<div class="web-left">
+						<h5 class="web-left-1">其他</h5>
+						<!--<h5 class="web-left-2">知识分享社区</h5>-->
+					</div>
+					<div class="web-right">
+						<img class="web-right-img" src="http://img.alicdn.com/sns_logo/i7/TB1tohcFVXXXXXpXpXXSutbFXXX.jpg"/>
+							
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<script>
+			
+			mui.init({
+				keyEventBind: {
+					backbutton: true // 打开back按键监听
+				},
+				// 配置具体需要监听的手势事件
+				gestureConfig: {
+					longtap: true, // 手机端长按事件，默认为 false
+				}
+			});
+			
+			mui.plusReady(function() {
+	
+		/**
+		 * 滚动到一定距离，顶部城市显示区域颜色改变
+		 */
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > 10) {
+			//		$('.detail-nav').css('backgroundColor', 'green');
+					$('.detail-nav').css('opacity', '0.2');
+					$('.mui-title').css('color', 'black');
+				} else {
+			//		$('.detail-nav').css('backgroundColor', 'rgba(27,130,210,255)');
+					$('.detail-nav').css('opacity', '1');
+					$('.mui-title').css('color', '#FFFFFF');
+				}
+			})
+			
+		});
+
+			function toDetail(type){
+//				alert(type);
+				var newWV = plus.webview.create('tb-Detail.html?type=' + type, 'new');
+				newWV.show('slide-in-right', 200);
+			}
+			
+		</script>
+	</body>
+
+</html>

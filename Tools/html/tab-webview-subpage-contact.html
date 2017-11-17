@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>本地天气</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/app/weather.css">
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<div id="weather-home-page" class="mui-control-content mui-active">
+				<!-- 天气头部区域 -->
+				<header class="mui-bar mui-bar-nav detail-nav">
+					<h1 class="mui-title" style="text-align: left;left: 20px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">
+						本地天气：<span id="city">成都</span>
+					</h1>
+				</header>
+
+				<!-- 当前位置天气显示区域 background-image: url(images/weather-bg/weather2.jpg);-->
+				<div class="cur-weather module-tap" id="weather-bg" style="background-color:rgba(27,130,210,255);background-size: cover;">
+					<div style="height: 100%;background-color: #000000;filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5; ">
+					<!-- 当前城市天气详情显示 -->
+					<div class="cur-weather-detail">
+						<div class="cur-weather-detail-left">
+							<div class="cur-temperature"><span class="cur-font-color">29</span><sup class="cur-font-color">o</sup><sup class="cur-font-color">阴</sup></div>
+							<div class="cur-weather-otherinfo">
+								<!-- 更新时间 -->
+								<a class="mui-icon mui-icon-refreshempty bg-font-color" style="color: #FFFFFF;"></a>
+								<span style="font-size: 14px;" class="bg-font-color">刷新时间</span>
+								<span style="font-size: 14px;" class="update-time bg-font-color">&#x2193;下拉刷新</span>
+
+							</div>
+						</div>
+						<div class="cur-weather-detail-right">
+							<!-- 空气质量 -->
+							<div class="air-quality">
+								<span class="air-quality-graphic"></span>
+								<span class="air-quality-desc">空气</span>
+								<span class="air-quality-quality"></span>
+								<!--<span class="air-quality-desc">pm2.5</span>
+		    				<span class="air-quality-number">53</span>-->
+							</div>
+
+							<!-- 空气预报短时查看-->
+							<!--<div class="weather-short-view">
+		    				<img class="shorttime-icon" src="../images/weather-imgicon/0.png" width="32px" />
+		    				<span>短时</span>
+		    			</div>-->
+						</div>
+					</div>
+					<!-- 语音播报和出行温馨提示 -->
+					<div class="cur-weather-tips">
+
+						<!-- 语音播报 -->
+						<!--<span class="voice-broadcast" > 
+		    			<img src="../images/chifan.gif" style="width: 80px;"/>
+		    		</span>-->
+					</div>
+
+					<div style="width: 100%;height: 50px;text-align: center;">
+						<div style="width: 33%;height:50px;line-height: 25px;float: left;">
+							<p style="color: #FFFFFF;" class="bg-font-color">风向</p>
+							<p class="wind-direction bg-font-color" style="color: #FFFFFF;"></p>
+						</div>
+						<div style="width: 34%;height:50px;line-height: 25px;float: left;border-left: 1px solid #FFFFFF;border-right: 1px solid #FFFFFF;">
+							<p style="color: #FFFFFF;" class="bg-font-color">风力</p>
+							<p class="wind-scale bg-font-color" style="color: #FFFFFF;"></p>
+						</div>
+						<div style="width: 33%;height:50px;line-height: 25px;float: left;">
+							<p style="color: #FFFFFF;" class="bg-font-color">湿度</p>
+							<span class="water-drop bg-font-color" style="font-size: 14px;">&nbsp;<span class="sd"></span>%</span>
+						</div>
+					</div>
+
+				</div>
+				</div>
+				<!-- 更多天气信息 -->
+				<div class="weather-more-info">
+					<!-- 24小时预报 -->
+					<div class="preiodtime-wrapper">
+						<div class="cur-weather-preiodtime-desc">24小时预报</div>
+						<!-- 当前城市分时段天气信息显示 -->
+						<div class="cur-weather-preiodtime">
+							<div class="weather-preiodtime-wrapper">
+								<div>
+									<span class="periodoftime">09:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px" />
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">19</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">10:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px" />
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">18</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">1级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">11:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px" />
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">22</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">12:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">15</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-common">良</span>
+								</div>
+								<div>
+									<span class="periodoftime">13:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">17</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">5级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-common">良</span>
+								</div>
+								<div>
+									<span class="periodoftime">14:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">19</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-common">良</span>
+								</div>
+								<div>
+									<span class="periodoftime">15:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">13</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">4级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-common">良</span>
+								</div>
+								<div>
+									<span class="periodoftime">16:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">22</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">17:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">23</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">18:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">20</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-common">良</span>
+								</div>
+								<div>
+									<span class="periodoftime">19:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">24</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-common">良</span>
+								</div>
+								<div>
+									<span class="periodoftime">20:00</span>
+									<span class="weather-time-icon">
+					    			<img src="" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">18</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">21:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">17</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">22:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">20</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">23:0</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">23</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">00:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">21</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">01:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">19</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-common">良</span>
+								</div>
+								<div>
+									<span class="periodoftime">02:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">23</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-common">良</span>
+								</div>
+								<div>
+									<span class="periodoftime">03:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">20</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">04:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">21</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">3级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+								<div>
+									<span class="periodoftime">05:00</span>
+									<span class="weather-time-icon">
+					    			<img src="../images/weather-imgicon/0.png" class="time-icon" width="24px"/>
+					    		</span>
+									<span class="weather-time-temperature">
+					    			<span class="periodtime-temp">18</span>&#8451;
+									</span>
+									<span class="weather-time-wind">
+					    			<span class="mui-icon mui-icon-paperplane"></span>
+									<span class="weather-time-wind-scale">2级</span>
+									</span>
+									<span class="periodoftime-air-quality quality-good">优</span>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!-- 当前城市七天天气预报 -->
+					<div class="cur-location-forecast-fifteenday module-tap">
+						<div class="forecast-fifteenday-desc">7天预报</div>
+						<div class="forecast-day-detail">
+							<!-- 日期 -->
+							<span class="day">
+			    			<span class="calendar-day">
+			    				<span class="calendar-month">05</span>/<span class="calendar-date">22</span>
+							</span>
+							</span>
+							<span class="desc-day">昨天</span>
+							<!-- 趋势 -->
+							<span class="trend">
+			    			<span class="trend-desc">多云转晴</span>
+							</span>
+							<!-- 温度 -->
+							<span class="temperature">
+			    			<span class="temperature-highest">
+			    				<span class="htemp">27</span> /
+							</span>
+							<span class="temperature-lowest">
+			    				<span class="ltemp">22</span>&#8451;
+							</span>
+							</span>
+						</div>
+						<div class="forecast-day-detail">
+							<!-- 日期 -->
+							<span class="day">
+			    			<span class="calendar-day">
+			    				<span class="calendar-month">05</span>/<span class="calendar-date">23</span>
+							</span>
+							</span>
+							<span class="desc-day">今天</span>
+							<!-- 趋势 -->
+							<span class="trend">
+			    			<span class="trend-desc">小雨转阴</span>
+							</span>
+							<!-- 温度 -->
+							<span class="temperature">
+			    			<span class="temperature-highest">
+			    				<span class="htemp">26</span> /
+							</span>
+							<span class="temperature-lowest">
+			    				<span class="ltemp">19</span>&#8451;
+							</span>
+							</span>
+						</div>
+						<div class="forecast-day-detail">
+							<!-- 日期 -->
+							<span class="day">
+			    			<span class="calendar-day">
+			    				<span class="calendar-month">05</span>/<span class="calendar-date">24</span></span>
+							</span>
+							<span class="desc-day">明天</span>
+							</span>
+							<!-- 趋势 -->
+							<span class="trend">
+			    			<span class="trend-desc">多云转晴</span>
+							</span>
+							<!-- 温度 -->
+							<span class="temperature">
+			    			<span class="temperature-highest">
+			    				<span class="htemp">27</span> /
+							</span>
+							<span class="temperature-lowest">
+			    				<span class="ltemp">17</span>&#8451;
+							</span>
+							</span>
+						</div>
+						<div class="forecast-day-detail">
+							<!-- 日期 -->
+							<span class="day">
+			    			<span class="calendar-day">
+			    				<span class="calendar-month">05</span>/<span class="calendar-date">25</span></span>
+							</span>
+							<span class="desc-day">周四</span>
+							</span>
+							<!-- 趋势 -->
+							<span class="trend">
+			    			<span class="trend-desc">多云转晴</span>
+							</span>
+							<!-- 温度 -->
+							<span class="temperature">
+			    			<span class="temperature-highest">
+			    				<span class="htemp">27</span> /
+							</span>
+							<span class="temperature-lowest">
+			    				<span class="ltemp">22</span>&#8451;
+							</span>
+							</span>
+						</div>
+						<div class="forecast-day-detail">
+							<!-- 日期 -->
+							<span class="day">
+			    			<span class="calendar-day">
+			    				<span class="calendar-month">05</span>/<span class="calendar-date">26</span></span>
+							</span>
+							<span class="desc-day">周五</span>
+							</span>
+							<!-- 趋势 -->
+							<span class="trend">
+			    			<span class="trend-desc">晴转小雨</span>
+							</span>
+							<!-- 温度 -->
+							<span class="temperature">
+			    			<span class="temperature-highest">
+			    				<span class="htemp">29</span> /
+							</span>
+							<span class="temperature-lowest">
+			    				<span class="ltemp">18</span>&#8451;
+							</span>
+							</span>
+						</div>
+						<div class="forecast-day-detail">
+							<!-- 日期 -->
+							<span class="day">
+			    			<span class="calendar-day">
+			    				<span class="calendar-month">05</span>/<span class="calendar-date">27</span></span>
+							</span>
+							<span class="desc-day">周六</span>
+							</span>
+							<!-- 趋势 -->
+							<span class="trend">
+			    			<span class="trend-desc">晴转小雨</span>
+							</span>
+							<!-- 温度 -->
+							<span class="temperature">
+			    			<span class="temperature-highest">
+			    				<span class="htemp">25</span> /
+							</span>
+							<span class="temperature-lowest">
+			    				<span class="ltemp">19</span>&#8451;
+							</span>
+							</span>
+						</div>
+						<div class="forecast-day-detail">
+							<!-- 日期 -->
+							<span class="day">
+			    			<span class="calendar-day">
+			    				<span class="calendar-month">05</span>/<span class="calendar-date">28</span></span>
+							</span>
+							<span class="desc-day">周日</span>
+							</span>
+							<!-- 趋势 -->
+							<span class="trend">
+			    			<span class="trend-desc">晴转小雨</span>
+							</span>
+							<!-- 温度 -->
+							<span class="temperature">
+			    			<span class="temperature-highest">
+			    				<span class="htemp">27</span> /
+							</span>
+							<span class="temperature-lowest">
+			    				<span class="ltemp">16</span>&#8451;
+							</span>
+							</span>
+						</div>
+
+					</div>
+
+					<!-- 生活指数 -->
+					<div class="living-index module-tap">
+						<div class="living-index-desc">生活指数</div>
+						<!-- 生活指数详情 -->
+
+						<!-- 农历 -->
+						<div class="living-index-item lunar-calendar">
+							<span class="item-desc calendar-lunar">五月初二</span>
+							<span class="item-type">农历</span>
+						</div>
+
+						<!-- 化妆指数 -->
+						<div class="living-index-item more-suit">
+							<span class="item-desc pp">防晒</span>
+							<span class="item-type">化妆</span>
+						</div>
+
+						<!-- 感冒 -->
+						<div class="living-index-item more-prone">
+							<span class="item-desc gm">较易发</span>
+							<span class="item-type">感冒</span>
+						</div>
+
+						<!-- 洗车 -->
+						<div class="living-index-item quoted-price last-column">
+							<span class="item-desc xc">较适宜</span>
+							<span class="item-type">洗车</span>
+						</div>
+
+						<!-- 穿衣 -->
+						<div class="living-index-item dress">
+							<span class="item-desc ct">炎热</span>
+							<span class="item-type">穿衣</span>
+						</div>
+
+						<!-- 紫外线强度指数 -->
+						<div class="living-index-item weakest">
+							<span class="item-desc uv">强</span>
+							<span class="item-type">紫外线强度</span>
+						</div>
+
+						<!-- 运动指数 -->
+						<div class="living-index-item unfavor">
+							<span class="item-desc yd">不适宜</span>
+							<span class="item-type">运动</span>
+						</div>
+
+						<!-- 污染指数 -->
+						<div class="living-index-item aqi">
+							<span class="item-desc aqi-quality">20</span>
+							<span class="item-type">空气</span>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/app/lunar.js"></script>
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack: false //启用右滑关闭功能
+		});
+
+		mui.plusReady(function() {
+			
+			/**
+			 * 滚动到一定距离，顶部城市显示区域颜色改变
+			 */
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > 10) {
+			//		alert("1")
+			//		$('.detail-nav').css('backgroundColor', 'green');
+					$('.detail-nav').css('opacity', '0.2');
+				} else {
+			//		$('.detail-nav').css('backgroundColor', 'rgba(27,130,210,255)');
+					$('.detail-nav').css('opacity', '1');
+				}
+			});
+			
+			/**
+			 * 定位当前城市
+			 */
+			setcurPosition();
+			/**
+			 * 更新天气信息
+			 */
+			setTimeout(updateWeather(document.getElementById('city').innerText),3000);
+			// 天气主页面
+			var _home = document.getElementById('weather-home-page');
+
+			/**
+			 * 监听网络更改
+			 */
+			_home.addEventListener("netchange", onNetChange, false);
+			/**
+			 * 监听向下滑动事件(下拉刷新)
+			 */
+			_home.addEventListener('swipedown', onNetChange, false);
+
+		})
+
+		/**
+		 * 判断手机端是否开启网络连接
+		 */
+		function onNetChange() {
+			// 获取当前网络类型
+			var nt = plus.networkinfo.getCurrentType();
+			switch(nt) {
+				// WiFi网络
+				case plus.networkinfo.CONNECTION_ETHERNET:
+				case plus.networkinfo.CONNECTION_WIFI:
+
+					// 数据网络
+				case plus.networkinfo.CONNECTION_CELL2G:
+
+				case plus.networkinfo.CONNECTION_CELL3G:
+
+				case plus.networkinfo.CONNECTION_CELL4G:
+					// 滚动条离顶部的距离
+					var _distTop = $(document).scrollTop();
+
+					// 在顶部时，下拉刷新
+					if(_distTop == 0) {
+						// 显示加载效果
+						plus.nativeUI.showWaiting('更新中...');
+						// 天气更新
+						updateWeather(document.getElementById('city').innerText);
+						// 3秒后关闭
+						setTimeout(closeMask, 2000);
+					}
+					break;
+
+					// 未开启网络连接
+				default:
+					mui.toast("当前网络异常，请检查网络设置！");
+					break;
+			}
+		}
+
+		/**
+		 * 关闭遮罩层
+		 */
+		function closeMask() {
+			plus.nativeUI.closeWaiting();
+			mui.toast('更新完成');
+		}
+		/**
+		 * 定位当前城市
+		 */
+		function setcurPosition() {
+			// 获取当前网络类型
+			var nt = plus.networkinfo.getCurrentType();
+			switch(nt) {
+				// 已开启网络
+				case plus.networkinfo.CONNECTION_ETHERNET:
+				case plus.networkinfo.CONNECTION_WIFI:
+				case plus.networkinfo.CONNECTION_CELL2G:
+				case plus.networkinfo.CONNECTION_CELL3G:
+				case plus.networkinfo.CONNECTION_CELL4G:
+
+					// 利用h5中plus获取坐标
+					plus.geolocation.getCurrentPosition(function(p) {
+						//http://api.map.baidu.com/geocoder?location=30.67,104.06&output=json&src=pkgznaW1kAlBoH3N5TzwDf8x&coord_type=gcj02
+						var _url = "http://api.map.baidu.com/geocoder";
+						try {
+							mui.getJSON(_url, {
+								location: p.coords.latitude + "," + p.coords.longitude,
+								output: "json",
+								src: "pkgznaW1kAlBoH3N5TzwDf8x",
+								coord_type: "gcj02"
+							}, function(v) {
+
+//								mui.toast("当前位置: " + v.result.addressComponent.city);
+
+								document.getElementById('city').innerText = v.result.addressComponent.city;
+							});
+						} catch(e) {
+							mui.toast('未开启手机GPS！');
+						}
+					});
+					break;
+
+					// 未开启网络连接
+				default:
+					mui.toast("当前网络异常，请检查网络设置！");
+					break;
+			}
+		}
+
+		/**
+		 * 更新天气信息
+		 * 
+		 * @param {Object} cityName
+		 */
+		function updateWeather(cityName) {
+			var _url = "http://aider.meizu.com/app/city/searchByCityNameAndDistrictName";
+			$.post(_url, {
+				"cityName": cityName,
+				"districtName": cityName
+			}, function(data) {
+				// 城市编号
+				var _cityId = data.value[0].code;
+				$.post("http://aider.meizu.com/app/weather/listWeather", {
+					cityIds: _cityId
+				}, function(jsonData) {
+
+					// 今天天气信息
+					var _todayWeathersInfo = jsonData.value[0].weathers[0];
+					var _weather = _todayWeathersInfo.weather;
+					// 当前城市实时天气信息
+					var _realtimeWeatherInfo = jsonData.value[0].realtime;
+					// 今天平均温度
+					$('.cur-temperature span:nth-child(1)').text(_todayWeathersInfo.temp_day_c);
+					// 天气状况
+					$('.cur-temperature sup:nth-child(3)').text(_weather);
+					// 风向
+					$('.wind-direction').text(_realtimeWeatherInfo.wD);
+					// 设置天气背景（必应每日一图）
+					$.post("http://route.showapi.com/1287-1", {
+						"showapi_sign": "06bb75a7672b4b6b949dec894d2cce7c",
+						"showapi_appid": "43995",
+						"showapi_sign_method": "md5",
+						"showapi_res_gzip": "1"
+					}, function(data) {
+						if(data.showapi_res_code != 0) {
+							mui.toast("类别获取失败！")
+						} else {
+							var img = data.showapi_res_body.data.img_1366;
+							
+							$('#weather-bg').css('backgroundImage','url(' + img);
+						}
+						
+					})
+					
+					
+					
+					$('.bg-font-color').css('color', '#FFFFFF');
+					$('.cur-font-color').css('color', '#FFFFFF');
+
+					// 风级
+					$('.wind-scale').text(_realtimeWeatherInfo.wS);
+					// 湿度
+					$('.sd').text(_realtimeWeatherInfo.sD);
+					// 气压
+					$('.pressure-num').text(Math.floor(1000 + Math.random() * 30));
+
+					// 当前时间
+					var _myDate = new Date();
+					var _hour = parseInt(_myDate.getHours());
+
+					toLocaleTimeString = _hour + " : " + _myDate.getMinutes();
+					// 刷新时间
+					$('.update-time').text(toLocaleTimeString);
+
+					// 今天最高温度
+					$('.today-temp_day_c').text(_todayWeathersInfo.temp_day_c);
+					// 今天最低温度
+					$('.today-temp_night_c').text(_todayWeathersInfo.temp_night_c);
+					// 今天天气状态
+					$('.weather-today-trend').text(_todayWeathersInfo.weather);
+					// 今天天气状态图标
+					$('.today-trend-icon').attr('src', '../images/weather-imgicon/' + _todayWeathersInfo.img + '.png');
+
+					// 明天天气信息
+					var _tomWeathersInfo = jsonData.value[0].weathers[1];
+					// 明天最高温度
+					$('.tomorrow-temp_day_c').text(_tomWeathersInfo.temp_day_c);
+					// 明天最低温度
+					$('.tomorrow-temp_night_c').text(_tomWeathersInfo.temp_night_c);
+					// 明天天气状况
+					$('.weather-tomorrow-trend').text(_tomWeathersInfo.weather);
+					// 今天天气状态图标
+					$('.tm-trend-icon').attr('src', '../images/weather-imgicon/' + _tomWeathersInfo.img + '.png');
+					// 短时天气图标
+//					$('.shorttime-icon').attr('src', '../images/weather-imgicon/' + _todayWeathersInfo.img + '.png');
+
+					// 今天天气质量信息
+					var _airquality = jsonData.value[0].pm25;
+					// 今天天气质量
+					var _todayquality = _airquality.quality;
+					$('.air-quality-quality').text(_todayquality);
+					// 今天天气质量线段显示
+					var _pm25 = _airquality.pm25;
+					// 根据天气质量显示不同的背景颜色
+					if(_pm25 <= 50) {
+						// 轻度
+						$('.air-quality-graphic').css('backgroundColor', '#2AC845');
+					} else if(_pm25 > 50 && _pm25 <= 85) {
+						// 中度
+						$('.air-quality-graphic').css('backgroundColor', '#F0AD4E');
+					} else {
+						// 重度
+						$('.air-quality-graphic').css('backgroundColor', '#FF0000');
+					}
+
+					if(_pm25 >= document.documentElement.clientWidth * 0.3 - 3) {
+						_pm25 = document.documentElement.clientWidth * 0.3 - 3;
+					}
+
+					// 今天天气质量pm2.5指标线段显示
+					/*if (parseInt(_pm25) > 100) {
+						_pm25 = 90;
+					}*/
+
+					$('.air-quality-graphic').css('width', (parseInt(_pm25) / 4) + 'px');
+					// 今天天气质量pm2.5指标数字显示
+					$('.air-quality-number').text(_airquality.pm25);
+
+					// 根据天气质量，显示不同的背景颜色
+					if(_todayquality == '良') {
+						$('.today-air-quality').text(_todayquality).css('backgroundColor', '#F0AD4E');
+					} else if(_todayquality == '优') {
+						$('.today-air-quality').text(_todayquality).css('backgroundColor', '#2AC845');
+					}
+
+					var _qualityArr = ['优', '良'];
+					// 随机数
+					var _tomquality = _qualityArr[Math.round(Math.random())];
+					// 明天天气质量
+					if(_tomquality == '良') {
+						$('.tomorrow-air-quality').text(_tomquality).css('backgroundColor', '#F0AD4E');
+					} else if(_tomquality == '优') {
+						$('.tomorrow-air-quality').text(_tomquality).css('backgroundColor', '#2AC845');
+					}
+
+					// 24小时间隔预报
+					// 时间段
+					var _periodTimes = $('.periodoftime');
+					// 天气图标
+					var _timeIcons = $('.time-icon');
+					// 时间段温度
+					var _periodTemps = $('.periodtime-temp');
+					// 风级
+					var _windLevels = $('.weather-time-wind-scale');
+					// 天气质量
+					var _qualitys = $('.periodoftime-air-quality');
+
+					// 时间段下标
+					var _periodTimeIndex = 0;
+
+					// 天气信息
+					var _weatherDetailInfo = jsonData.value[0].weatherDetailsInfo.weather3HoursDetailsInfos;
+					for(var i = 0, len = _weatherDetailInfo.length; i < len; i++) {
+						var _detailInfo = _weatherDetailInfo[i];
+						var _startTime = _detailInfo.startTime.split(' ')[1].split(':')[0];
+						for(var j = 0; j < 3; j++) {
+							var _temp = parseInt(_startTime) + parseInt(j);
+							if(_temp < 10) {
+								_temp = '0' + _temp;
+							}
+							if(_temp == 24) {
+								_temp = '00';
+							}
+							if(_temp == 25) {
+								_temp = '01';
+							}
+							_periodTimes[_periodTimeIndex].innerText = _temp + ':00';
+
+							// 个位
+							var _gw = parseInt(_temp) % 10;
+							// 十位
+							var _sw = String(parseInt(_temp) / 10).split('.')[0];
+
+							// 晚上
+							if(_temp >= 18 || (_sw == 0 && _gw < 6)) {
+								if(_detailInfo.img == '0' || _detailInfo.img == '1') {
+									_detailInfo.img = 'moon';
+								}
+								if(_detailInfo.img == '3') {
+									_detailInfo.img = '8';
+								}
+							}
+
+							$(_timeIcons[_periodTimeIndex]).attr('src', '../images/weather-imgicon/' + _detailInfo.img + '.png');
+
+							$(_periodTemps[_periodTimeIndex]).text(parseInt(_detailInfo.highestTemperature) + Math.round(Math.random()));
+							$(_windLevels[_periodTimeIndex]).text(Math.floor(Math.random() * 5 + 1) + '级');
+							var _qualityArr = ['优', '良'];
+							var _tomquality = _qualityArr[Math.round(Math.random())];
+							// 天气质量
+							if(_tomquality == '良') {
+								$(_qualitys[_periodTimeIndex]).text(_tomquality).css('backgroundColor', '#F0AD4E');
+							} else if(_tomquality == '优') {
+								$(_qualitys[_periodTimeIndex]).text(_tomquality).css('backgroundColor', '#2AC845');
+							}
+							_periodTimeIndex++;
+						}
+					}
+
+					// 七天天气预报
+					var _indexArr = [6, 0, 1, 2, 3, 4, 5];
+					var _trends = $('.trend');
+					var _trendDesc = $('.trend-desc');
+					var _sevenDayForecastInfo = jsonData.value[0].weathers;
+					// 七天的最高最低温度
+					var _htemps = $('.htemp');
+					var _ltemps = $('.ltemp');
+					for(var i = 0, len = _indexArr.length; i < len; i++) {
+						var _info = _sevenDayForecastInfo[_indexArr[i]];
+//						alert(_info.img)
+						var _imgCount = _info.img;
+						
+						$(_trends[i]).css('backgroundImage', 'url(../images/weather-imgicon/' + _imgCount + '.png)');
+
+						$(_trendDesc[i]).text(_info.weather);
+						// 最高温度
+						$(_htemps[i]).text(_info.temp_day_c);
+						// 最低温度
+						$(_ltemps[i]).text(_info.temp_night_c);
+					}
+
+					// 生活指数
+					var _indexes = jsonData.value[0].indexes;
+					// 设置生活指数详情
+					setIndexesContent(_indexes);
+					// 设置空气指数详情
+					setAqiContext(_airquality);
+					// 农历
+					$('.calendar-lunar').text(getLunar().split(' ')[1]);
+					//解绑事件
+					document.querySelector('.lunar-calendar').removeEventListener('tap', bindLunarListener, false);
+					document.querySelector('.lunar-calendar').addEventListener('tap', bindLunarListener, false);
+
+					// 防晒指数
+					$('.pp').text(_indexes[0].level);
+					document.querySelector('.more-suit').removeEventListener('tap', bindPPListener, false);
+					document.querySelector('.more-suit').addEventListener('tap', bindPPListener, false);
+
+					// 感冒指数
+					$('.gm').text(_indexes[1].level);
+					document.querySelector('.more-prone').removeEventListener('tap', bindGmListener, false);
+					document.querySelector('.more-prone').addEventListener('tap', bindGmListener, false);
+
+					// 洗车指数
+					$('.xc').text(_indexes[2].level);
+					document.querySelector('.quoted-price').removeEventListener('tap', bindXcListener, false);
+					document.querySelector('.quoted-price').addEventListener('tap', bindXcListener, false);
+
+					// 穿衣指数
+					$('.ct').text(_indexes[3].level);
+					document.querySelector('.dress').removeEventListener('tap', bindCtListener, false);
+					document.querySelector('.dress').addEventListener('tap', bindCtListener, false);
+
+					// 紫外线强度指数
+					$('.uv').text(_indexes[4].level);
+					document.querySelector('.weakest').removeEventListener('tap', bindUvListener, false);
+					document.querySelector('.weakest').addEventListener('tap', bindUvListener, false);
+
+					// 运动指数 
+					$('.yd').text(_indexes[5].level);
+					document.querySelector('.unfavor').removeEventListener('tap', bindYdListener, false);
+					document.querySelector('.unfavor').addEventListener('tap', bindYdListener, false);
+
+					// aqi指数 
+					$('.aqi-quality').text(_airquality.aqi);
+					document.querySelector('.aqi').removeEventListener('tap', bindAqiListener, false);
+					document.querySelector('.aqi').addEventListener('tap', bindAqiListener, false);
+				});
+			});
+		}
+
+		// 化妆指数详情
+		var ppContent = '';
+		// 感冒指数详情
+		var gmContent = '';
+		// 洗车指数详情
+		var xcContent = '';
+		// 穿衣指数详情
+		var ctContent = '';
+		// 紫外线强度指数详情
+		var uvContent = '';
+		// 运动指数详情
+		var ydContent = '';
+		//空气指数详情
+		var aqiContent = '';
+		// 生活指数
+		var lieftIndexes = $('.item-type');
+
+		/**
+		 * 生活指数详情内容设置
+		 * @param {Object} indexes
+		 */
+		function setIndexesContent(indexes) {
+			ppContent = indexes[0].content;
+			gmContent = indexes[1].content;
+			xcContent = indexes[2].content;
+			ctContent = indexes[3].content;
+			uvContent = indexes[4].content;
+			ydContent = indexes[5].content;
+		}
+		/**
+		 * 生活指数详情内容设置
+		 * @param {Object} indexes
+		 */
+		function setAqiContext(indexes) {
+			aqiContent = "pm2.5: " + indexes.pm25 + "\n" +
+				"pm10: " + indexes.pm10 + "\n" + "co: " + indexes.co + "\n" + "no2: " + indexes.no2 + "\n" + "o3: " + indexes.o3 + "\n" + "so2: " + indexes.so2;
+		}
+
+		/**
+		 * 农历指数详情显示
+		 */
+		function bindLunarListener() {
+			mui.alert(getLunar(), lieftIndexes[0].innerText);
+		}
+
+		/**
+		 * 化妆指数详情显示
+		 */
+		function bindPPListener() {
+			mui.alert(ppContent, lieftIndexes[1].innerText + '指数');
+		}
+
+		/**
+		 * 感冒指数详情显示
+		 */
+		function bindGmListener() {
+			mui.alert(gmContent, lieftIndexes[2].innerText + '指数');
+		}
+
+		/**
+		 * 洗车指数详情显示
+		 */
+		function bindXcListener() {
+			mui.alert(xcContent, lieftIndexes[3].innerText + '指数');
+		}
+
+		/**
+		 * 穿衣指数详情显示
+		 */
+		function bindCtListener() {
+			mui.alert(ctContent, lieftIndexes[4].innerText + '指数');
+		}
+
+		/**
+		 * 紫外线强度指数详情显示
+		 */
+		function bindUvListener() {
+			mui.alert(uvContent, lieftIndexes[5].innerText + '指数');
+		}
+
+		/**
+		 * 运动指数详情显示
+		 */
+		function bindYdListener() {
+			mui.alert(ydContent, lieftIndexes[6].innerText + '指数');
+		}
+
+		/**
+		 * aqi指数详情显示
+		 */
+
+		function bindAqiListener() {
+			mui.alert(aqiContent, lieftIndexes[7].innerText + '指数');
+		}
+
+		/**
+		 * 设置时间
+		 */
+		function setTime() {
+			// 当前时间
+			var _now = new Date();
+			var _t = -1;
+			var _weeks = $('.desc-day');
+			// 显示时间
+			var _count = $('.calendar-day');
+			for(var i = 0; i < _count.length; i++) {
+				_now.setDate(_now.getDate() + _t);
+				var _this = $(_count[i]);
+				// 月份
+				var _month = parseInt(_now.getMonth()) + 1;
+				if(_month < 10) {
+					_month = '0' + _month;
+				}
+				_this.children('.calendar-month').text(_month);
+				// 日
+				var _date = _now.getDate();
+				if(parseInt(_date) < 10) {
+					_date = '0' + _date;
+				}
+				_this.children('.calendar-date').text(_date);
+
+				// 星期
+				if(i > 2) {
+					$(_weeks[i]).text(getWeek(_now.getDay()));
+				}
+
+				// 每天日期加1
+				if(_t < 1) {
+					_t += 2;
+				}
+			}
+		}
+
+		/**
+		 * 获得星期
+		 * @param {Object} flag
+		 */
+		function getWeek(flag) {
+			var _str;
+			switch(flag) {
+				case 0:
+					_str = "周日";
+					break;
+				case 1:
+					_str = "周一";
+					break;
+				case 2:
+					_str = "周二";
+					break;
+				case 3:
+					_str = "周三";
+					break;
+				case 4:
+					_str = "周四";
+					break;
+				case 5:
+					_str = "周五";
+					break;
+				default:
+					_str = "周六";
+					break;
+			}
+			return _str;
+		}
+	</script>
+
+</html>

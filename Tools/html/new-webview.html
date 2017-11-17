@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>new webview</title>
+		<script src="../js/mui.min.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/app/index.css"/>
+    	<link href="../css/iconfont.css" rel="stylesheet"/>
+    	<script src="../js/jquery-3.1.1.min.js"></script>
+    	<!--<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />--> 
+	</head>
+	<body>
+		<style>
+			
+		</style>
+			
+		   
+		<div class="mui-content">
+			
+			<iframe id="huoduan_frame" frameborder="0" scrolling="yes" name="main" src="https://www.coolapk.com/" 
+				style=" height:100%; visibility: inherit; width: 100%; z-index: 1;overflow: visible;">
+			</iframe>
+			
+		</div>
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+			var popup_Height = (screen.height-30)+'px';
+			document.getElementById('huoduan_frame').style.minHeight = popup_Height;
+			
+		</script>
+	</body>
+</html>

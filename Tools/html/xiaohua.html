@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>笑话大全</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />
+
+		<style>
+			html,
+			body {
+				background-color: #FFFFFF;
+			}
+			
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				margin: 0;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+			
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			
+			.mui-pull-top-canvas canvas {
+				width: 40px;
+			}
+			
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			
+			.mui-control-item {
+				/*width: 150px;*/
+			}
+			
+			#sliderSegmentedControl {
+				margin-top: 5px;
+			}
+			
+			.mui-table-view {
+				background-color: #1C182F;
+			}
+			
+			.xh-content {
+				/*margin-top: 10px;*/
+			}
+			
+			.xh-title {
+				font-size: 14px;
+				color: #8F8F94;
+			}
+			
+			.xh-time {
+				color: #8F8F94;
+			}
+			
+			.xh-zhengwen {
+				margin-top: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 头部区域 -->
+		<header class="mui-bar mui-bar-nav detail-nav">
+			<h1 class="mui-title" style="text-align: left;left: 20px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">笑话大全</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							文本笑话
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							图片笑话
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							动态搞笑
+						</a>
+
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/app/mui.pullToRefresh.js"></script>
+		<script src="../js/app/mui.pullToRefresh.material.js"></script>
+		<script>
+			mui.init();
+			(function($) {
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+				$.ready(function() {
+
+					//mui.pullToRefresh.js中已设置页面加载时自动刷新一次
+					//循环初始化所有下拉刷新，上拉加载。
+					$.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+						$(pullRefreshEl).pullToRefresh({
+							down: {
+								auto: true,
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										textXH(ul, index, 10, true, 'down');
+										self.endPullDownToRefresh();
+									}, 1000);
+								}
+							},
+							up: {
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										textXH(ul, index, 5, true, 'up');
+										self.endPullUpToRefresh();
+									}, 1000);
+								}
+							}
+						});
+					});
+
+					var textXH = function(ul, index, count, reverse, pull) {
+						var length = ul.querySelectorAll('li').length;
+						var page = Math.floor(length / count) + 1;
+
+						$.post("http://route.showapi.com/341-" + (index + 1), {
+							"showapi_sign": "06bb75a7672b4b6b949dec894d2cce7c",
+							"showapi_appid": "43995",
+							"showapi_sign_method": "md5",
+							"showapi_res_gzip": "1",
+							"page": page,
+							"maxResult": count
+						}, function(data) {
+
+							if(data.showapi_res_code != 0) {
+								mui.toast("类别获取失败！")
+							} else {
+
+								var dataJ = data.showapi_res_body.contentlist;
+								mui.each(dataJ, function(key, value) {
+
+									var li = document.createElement('li');
+									li.className = 'mui-table-view-cell';
+									var div1 = document.createElement('div');
+									div1.className = 'xh-content';
+									var div2 = document.createElement('div');
+									var span1 = document.createElement('span');
+									span1.className = 'xh-title';
+									span1.innerHTML = '时间：';
+									var span2 = document.createElement('span');
+									span2.className = 'xh-time';
+									span2.innerHTML = dataJ[key].ct;
+									div2.appendChild(span1);
+									div2.appendChild(span2);
+									var div3 = document.createElement('div');
+									div3.className = 'xh-zhengwen';
+
+									if(index == 0) {
+										var span3 = document.createElement('span');
+										span3.innerHTML = dataJ[key].text;
+										div3.appendChild(span3);
+										div1.appendChild(div2);
+										div1.appendChild(div3);
+									} else {
+										var span3 = document.createElement('span');
+										span3.innerHTML = dataJ[key].title;
+										var img1 = document.createElement('img');
+										img1.src = dataJ[key].img;
+										div3.appendChild(img1);
+										div1.appendChild(div2);
+										div1.appendChild(span3);
+										div1.appendChild(div3);
+									}
+
+									li.appendChild(div1);
+									//li.innerHTML = '第' + (index + 1) + '个选项卡子项-' + (length + (reverse ? (count - i) : (i + 1)));
+									if(pull == 'down') {
+										ul.prepend(li)
+									} else {
+										ul.appendChild(li);
+									}
+
+								})
+
+							}
+						});
+
+					};
+
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

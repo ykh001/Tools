@@ -1,0 +1,27 @@
+/**
+ * 便签查看css样式
+ */
+.detail-nav {
+	background-color: rgba(204, 204, 204, 0.75);
+	box-shadow: none !important;
+	border-bottom: 1px solid rgba(85, 85, 85, 0.3);
+}
+
+.note-detail-view {
+	padding: 8px 0;
+	padding-left: 10px;
+	text-indent: 2em;
+	width: 100%;
+}
+
+.show-createtime {
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	top: 93%;
+	left: 0;
+	display: inline-block;
+	text-align: center;
+	padding: 4px;
+	color: rgba(0, 0, 0, 0.65);
+}

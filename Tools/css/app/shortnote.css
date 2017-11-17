@@ -1,0 +1,152 @@
+/**
+ * 便签
+ */
+.note-header-nav {
+	background-color: rgba(204, 204, 204, 0.75);
+	box-shadow: none !important;
+	border-bottom: 1px solid rgba(85, 85, 85, 0.3);
+}
+
+.onte-nav-sub {
+	position: relative;
+	width: 100%;
+	height: 40px;
+}
+
+.edit-note,
+.add-note {
+	position: absolute;
+	top: 12px;
+}
+
+.edit-note {
+	left: 5px;
+}
+
+.add-note {
+	right: 8px;
+	font-size: 30px;
+}
+
+.note-item-wrapper {
+	width: 100%;
+	padding: 0 15px;
+	color: #000000;
+	overflow: hidden;
+	/*overflow-y: scroll;*/
+	overflow-y: overlay;
+}
+
+.note-item {
+	height: 50px;
+	position: relative;
+	border-bottom: 1px solid rgba(143, 143, 148, 0.45)
+}
+
+.note-content-preview,
+.note-add-time,
+.note-right-arrow {
+	display: inline-block;
+	position:absolute;
+	top: 15px;
+}
+
+.note-content-preview {
+	width: 60%;
+	white-space: nowrap;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	left: 4px;
+	color: #000000;
+	font-size: 16px;
+}
+
+.note-content-toggle {
+	display: inline-block;
+	position:absolute;
+	top: 15px;
+	width: 60%;
+	white-space: nowrap;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	left: 35px;
+	font-size: 16px;
+}
+
+.note-add-time,
+.note-right-arrow {
+	color: rgba(0, 0, 0, 0.65);
+}
+
+.note-add-time {
+	width: 60px;
+	right: 20px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.note-item .note-right-arrow {
+	right: 5px;
+	font-size: 18px;
+}
+
+.note-check .checkbox {
+	display: none;
+}
+
+/*样式切换*/
+.checkbox-selected {
+	display: inline-block;
+	-webkit-appearance: none;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	position: absolute;
+	top: 12px;
+	border: 1px solid #8F8F94;
+}
+
+/*改变背景颜色*/
+.change-bgcolor {
+	border: 1px solid #2196f3;
+	background-color: #2196f3;
+}
+
+/*选中效果*/
+.note-check .select-flag {
+	display: none;
+}
+
+/*样式切换*/
+.select-flag-selected {
+	color: #FFFFFF;
+	display: inline-block;
+	position: relative;
+	left: 2px;
+	top: 15px;
+}
+
+.del-div {
+	display: none;
+}
+
+.del-div-toggle {
+	position: fixed;
+	bottom: 50px;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	z-index: 99;
+	padding-top: 8px;
+	background-color: rgba(204, 204, 204, 0.75);
+}
+
+#delBtn {
+	width: 70%;
+	margin: 2px auto;
+	padding: 4px;
+	background-color: #FFFFFF;
+	color: rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	/*border: 1px solid #FF5053;*/
+}

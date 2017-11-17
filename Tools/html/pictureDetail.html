@@ -1,0 +1,334 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+
+		<style type="text/css">
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+			
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
+			
+			.detail-nav {
+				background-color: rgba(27, 130, 210, 255);
+				height: 50px;
+				color: #FFFFFF;
+			}
+			
+			.mui-title {
+				line-height: 50px;
+			}
+			.pic-down{
+				width: 30%;
+				height: 30px;
+				border-radius: 15px;
+				position: relative;
+				top: -35px;
+				filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6;
+				text-align: center;
+				line-height: 30px;
+				color: #FFFFFF;
+				background-color: gray;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav detail-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+			<!--<h1 class="mui-title" id="title" style="color: #FFFFFF;">title</h1>-->
+			<h1 class="mui-title">
+				<marquee id="title"  direction=left  behavior="scroll" scrollamount="5" scrolldelay="0" style="color: #FFFFFF;">欢迎光临科讯青年学习频道！</marquee>
+			</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded" id="img-content">
+				<p id="title1"></p>
+				<p>图集数量：【<span id="imgCount"></span>】</p>
+				<!--<p>
+					<img src="http://pic.58pic.com/58pic/15/01/73/00r58PICNuP_1024.jpg" class="ceshi" data-preview-src="" data-preview-group="1" />
+					<div class="pic-down">下载</div>
+				</p>-->
+				 
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/mui.zoom.js"></script>
+	<script src="../js/mui.previewimage.js"></script>
+	<script src="../js/app/pictureDetail.js"></script>
+	
+	<script>
+		mui.previewImage();
+
+		var imgId = GetQueryString("imgId");
+		var title = GetQueryString("title");
+
+		document.getElementById('title').innerHTML = title;
+		document.getElementById('title1').innerHTML = "图集名称："+title;
+		
+		
+		$.post("http://route.showapi.com/1208-3", {
+			"showapi_sign": "06bb75a7672b4b6b949dec894d2cce7c",
+			"showapi_appid": "43995",
+			"showapi_sign_method": "md5",
+			"showapi_res_gzip": "2", //为1则压缩
+			"id": imgId //图片集的ID
+
+		}, function(data) {
+
+			if(data.showapi_res_code != 0) {
+				mui.toast("资源获取失败！")
+			} else {
+				
+				var imgcount = data.showapi_res_body.count;
+				document.getElementById('imgCount').innerHTML = imgcount;
+				
+				var imgContent = document.getElementById('img-content');
+
+				mui.each(data.showapi_res_body.data, function(key, value) {
+
+					var imgurl = data.showapi_res_body.data[key]
+
+					var pp = document.createElement('p');
+					var img = document.createElement('img');
+//					pp.setAttribute("onclick","mui.toast('hehe')")
+					img.setAttribute("src", imgurl);
+					img.setAttribute("class","ceshi");
+					img.setAttribute("data-preview-src", "");
+					img.setAttribute("data-preview-group", "1");
+					var divv = document.createElement('div');
+					divv.className = 'pic-down';
+					divv.innerHTML = '下载';
+					pp.appendChild(img);
+					pp.appendChild(divv);
+
+					imgContent.appendChild(pp);
+
+				});
+
+			}
+
+		});
+
+
+		//下载图片
+		$(document).on('click',".pic-down",function(e){
+			var actionList = {
+				title: '操作',
+				cancel: "取消",
+				buttons: [{
+					title: "保存图片"
+				}]
+			};
+			var imgSrc = this.previousSibling.src;
+//			alert(this.previousSibling.src)
+			//弹出actionSheet选项
+			plus.nativeUI.actionSheet(actionList, function(e) {
+				if(e.index == 1) {
+					//创建一个下载任务
+					var imgDtask = plus.downloader.createDownload(imgSrc, {
+//						method: "GET"
+					}, function(d, status) {
+//						alert(d.filename)
+						//下载完成的回调函数
+						if(status == 200) {
+							plus.gallery.save(d.filename, function() { //保存到相册
+								plus.io.resolveLocalFileSystemURL(d.filename, function(entry) {
+									entry.remove(); //删除临时文件
+								});
+								return alert('图片已保存至相册');
+							});
+						} else {
+							alert("保存失败!" + status);
+						}
+					});
+					imgDtask.start(); //开始下载任务
+				}
+			});
+		});
+
+
+	
+	</script>
+
+</html>

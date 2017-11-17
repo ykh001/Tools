@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>知乎日报</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />
+
+		<style>
+			html,
+			body {
+				background-color: #FFFFFF;
+			}
+			
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				margin: 0;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+			
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			
+			.mui-pull-top-canvas canvas {
+				width: 40px;
+			}
+			
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			
+			.mui-control-item {
+				/*width: 100px !important;*/
+				/*border:1px solid red !important;*/
+				padding: 0 10px !important;
+			}
+			
+			#sliderSegmentedControl { 
+				margin-top: 5px;
+			}
+			.mui-table-view-cell{
+				background-color: #FFFFFF;
+				/*border: 1px solid red;*/
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				margin: 10px !important;
+				border-radius: 5px;
+			}
+			.mui-table-view {
+				background-color: rgb(243,243,243);
+			}
+			
+			.xh-time {
+				padding-top: 10px;
+				margin-left: 15px;
+			}
+			.xh-zhengwen {
+				color: #000000;
+				font-size: 14px;
+			}
+			
+			.xh-right {
+				/*border: 1px solid green;*/
+				width: 30%;
+				float: right;		
+			}
+			.xh-left{
+				width: 70%;
+				/*border: 1px solid red;*/
+				float: left;
+			}
+			.img-content{
+				margin-left: 10px !important;
+				background-image: url(../css/shuaxin/images/16.jpg);
+				/*border: 1px solid red;*/
+				height: 70px;
+				background-size: cover;
+			}
+			.neiqian{
+				height: 40%;
+			}
+			#neiqian-img,.neiqianImg{
+				height: 100%;
+			}
+			#neiqian-p{
+				display: block;
+				position: absolute;
+				top:20%;
+				color: #FFFFFF;
+				/*margin: 10px;*/
+				padding: 5px 10px;
+				font-size: 18px;
+				letter-spacing: 3px;
+				line-height: 30px;
+				background-color: #000000;
+			}
+			.neiqianP{
+				background-color: #666666;
+				display: block;
+				position: absolute;
+				top:27%;
+				color: #FFFFFF;
+				/*margin: 10px;*/
+				padding: 5px 10px;
+				font-size: 18px;
+				letter-spacing: 3px;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 头部区域 -->
+		<header class="mui-bar mui-bar-nav detail-nav">
+			<h1 class="mui-title" style="text-align: left;left: 10px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">知乎日报</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							首页
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							开始游戏
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							电影日报
+						</a>
+						<a class="mui-control-item" href="#item4mobile">
+							设计日报
+						</a>
+						<a class="mui-control-item" href="#item5mobile">
+							大公司日报
+						</a>
+						<a class="mui-control-item" href="#item6mobile">
+							财经日报
+						</a>
+						<a class="mui-control-item" href="#item7mobile">
+							音乐日报
+						</a>
+						<a class="mui-control-item" href="#item8mobile">
+							体育日报
+						</a>
+						<a class="mui-control-item" href="#item9mobile">
+							动漫日报
+						</a>
+						<a class="mui-control-item" href="#item10mobile">
+							互联网安全
+						</a>
+						<a class="mui-control-item" href="#item11mobile">
+							不许无聊
+						</a>
+						<a class="mui-control-item" href="#item12mobile">
+							用户推荐日报
+						</a>
+						<a class="mui-control-item" href="#item13mobile">
+							日常心理学
+						</a>
+
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p" class="mui-ellipsis:3"></p>
+							</div>	
+							<div class="mui-scroll" id="zhihu-shouye">
+								<ul class="mui-table-view">
+									<!--<div class="xh-time">2017/09/12</div>
+									<li class="mui-table-view-cell">
+										<div class="xh-content">
+											<div class="xh-left">
+												<p class="xh-zhengwen mui-ellipsis:3"></p>
+											</div>
+											<div class="xh-right">
+												<div class="img-content" >
+												
+												</div>
+											</div>
+										</div>
+										
+									</li>-->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-2" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-2" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-3" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-3" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-4" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-4" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item5mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-5" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-5" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item6mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-6" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-6" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item7mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-7" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-7" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item8mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-8" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-8" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item9mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-9" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-9" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item10mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-10" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-10" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item11mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-11" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-11" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item12mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+						<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-12" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-12" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item13mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<!--//内嵌图-->
+							<div class="neiqian">
+								<img id="neiqian-img-13" class="neiqianImg" src="../css/shuaxin/images/16.jpg" />
+								<p id="neiqian-p-13" class="neiqianP mui-ellipsis:3"></p>
+							</div>
+							<div class="mui-scroll list-scroll">
+								<ul class="mui-table-view">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/app/mui.pullToRefresh.js"></script>
+		<script src="../js/app/mui.pullToRefresh.material.js"></script>
+		<script>
+			mui.init();
+			
+			(function($) {
+				//阻尼系数
+				var deceleration = mui.os.ios ? 0.003 : 0.0009;
+				$('.mui-scroll-wrapper').scroll({
+					bounce: false,
+					indicators: true, //是否显示滚动条
+					deceleration: deceleration
+				});
+				
+				$.ready(function() {
+					
+					
+					//首页轮播图
+					var lunboSY = function() {
+
+						mui.ajax({
+			                url: "https://news-at.zhihu.com/api/4/news/latest?jsoncallback=?",
+			                type: "get",
+			                async: true,
+			                dataType: "json",
+			                jsonp: "jsoncallback",
+			                timeout: 1000,
+			                success: function(data) {
+			                	var dataJ = data.top_stories;
+		                    
+								document.getElementById('neiqian-img').setAttribute('src',dataJ[0].image);
+//								document.getElementById('neiqian-p').innerHTML = dataJ[0].title;
+								
+								
+			                    
+			                },
+			                error: function(xhr, type, errorThrown) {
+			                    plus.nativeUI.toast(errorThrown);
+			                }
+			            });
+					};
+					//获取首页轮播图
+					lunboSY();
+					
+					
+					var index = -1; 
+					var days = 24*60*1000*60 //一天的毫秒数
+					//推荐页面下拉刷新，上拉加载。
+					$('#zhihu-shouye').pullToRefresh({
+						down: {
+							callback: function() {
+								var self = this;
+								setTimeout(function() {
+									//日期刷新一次减一天
+									var date = new Date();
+									date.setTime(date.getTime()-days*index);
+									index++;
+									var mm = jiaLing(date.getMonth()+1);
+									var dd = jiaLing(date.getDate());
+									var riqi = date.getFullYear()+''+mm+''+dd;
+									
+									var ul = self.element.querySelector('.mui-table-view');
+									ZHSY(ul,riqi,'down');
+									self.endPullDownToRefresh();
+								}, 1000);
+							}
+						},
+						up: {
+							contentinit: '',
+							contentdown: '',
+							contentrefresh: '数据剽窃中。。。',
+							callback: function() {
+								var self = this;
+								setTimeout(function() {
+									//时期刷新一次减一天
+									var date = new Date();
+									date.setTime(date.getTime()-days*index);
+									index++;
+									var mm = jiaLing(date.getMonth()+1);
+									var dd = jiaLing(date.getDate());
+									var riqi = date.getFullYear()+''+mm+''+dd;
+									
+									var ul = self.element.querySelector('.mui-table-view');
+									ZHSY(ul,riqi,'up');
+									self.endPullUpToRefresh();
+								}, 1000);
+							}
+						}
+					});
+					
+					
+					//mui.pullToRefresh.js中已设置页面加载时自动刷新一次
+					//循环初始化所有下拉刷新，上拉加载。
+					$.each(document.querySelectorAll('.mui-slider-group .list-scroll'), function(index, pullRefreshEl) {
+						$(pullRefreshEl).pullToRefresh({
+							down: {
+								auto: true,
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										textXH(ul, index, 'down');
+										self.endPullDownToRefresh();
+									}, 1000);
+								}
+							},
+							up: {
+								
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										var ul = self.element.querySelector('.mui-table-view');
+										textXH(ul, index, 'up');
+										self.endPullUpToRefresh();
+									}, 1000);
+								}
+							}
+						});
+					});
+					var jiaLing = function(data) {
+						if(data<10){
+							data = '0'+data;
+						}else{
+							data = data;
+						}
+						return data;
+					}
+					
+					var ZHSY = function(ul,date,pull) {
+//						var length = ul.querySelectorAll('li').length;
+						
+						mui.ajax({
+			                url: "https://news-at.zhihu.com/api/4/news/before/"+date+"?jsoncallback=?",
+			                type: "get",
+			                async: true,
+			                dataType: "json",
+			                jsonp: "jsoncallback",
+			                timeout: 1000,
+			                success: function(data) {
+			                    
+			                    var divDate = document.createElement('div');
+			                    divDate.className = 'xh-time';
+			                    divDate.innerHTML = data.date;
+			                    if(pull == 'up') {
+									ul.append(divDate);
+								} 
+			                    
+			                    var dataJ = data.stories;
+								mui.each(dataJ, function(key, value) {
+
+									var li = document.createElement('li');
+									li.className = 'mui-table-view-cell';
+									li.setAttribute('onclick','openNew('+dataJ[key].id+')');
+									var div1 = document.createElement('div');
+									div1.className = 'xh-content';
+									var div2 = document.createElement('div');
+									div2.className = 'xh-left';
+									var pp1 = document.createElement('p');
+									pp1.classname = 'xh-zhengwen mui-ellipsis:3';
+									pp1.innerHTML = dataJ[key].title;
+									div2.appendChild(pp1)
+									var div3 = document.createElement('div');
+									div3.className = 'xh-right';
+									var div4 = document.createElement('div');
+									div4.className = 'img-content';
+									div4.style.backgroundImage = 'url('+dataJ[key].images+')';
+									div3.appendChild(div4);
+									div1.appendChild(div2);
+									div1.appendChild(div3);
+
+									li.appendChild(div1);
+									if(pull == 'down') {
+										ul.prepend(li)
+									} else {
+										ul.appendChild(li);
+									}
+
+								})
+			                    if(pull == 'down'){
+			                    	ul.prepend(divDate);
+			                    }
+			                    
+			                    
+			                },
+			                error: function(xhr, type, errorThrown) {
+			                    plus.nativeUI.toast(errorThrown);
+			                }
+			            });
+					};
+					
+					var textXH = function(ul, index,  pull) {
+						var length = ul.querySelectorAll('li').length;
+
+						mui.ajax({
+			                url: "https://news-at.zhihu.com/api/4/theme/"+(index+2)+"?jsoncallback=?",
+			                type: "get",
+			                async: true,
+			                dataType: "json",
+			                jsonp: "jsoncallback",
+			                timeout: 1000,
+			                success: function(data) {
+			                    ul.innerHTML = '';
+//			                    var divDate = document.createElement('div');
+//			                    divDate.className = 'xh-time';
+//			                    divDate.innerHTML = data.date;
+//			                    if(pull == 'up') {
+//									ul.append(divDate);
+//								} 
+			                    document.getElementById('neiqian-img-'+(index+2)).setAttribute('src',data.image);
+								document.getElementById('neiqian-p-'+(index+2)).innerHTML = data.description;
+			                    
+			                    
+			                    var dataJ = data.stories;
+								mui.each(dataJ, function(key, value) {
+
+									var li = document.createElement('li');
+									li.className = 'mui-table-view-cell';
+									li.setAttribute('onclick','openNew('+dataJ[key].id+')');
+									var div1 = document.createElement('div');
+									div1.className = 'xh-content';
+									var div2 = document.createElement('div');
+									div2.className = 'xh-left';
+									var pp1 = document.createElement('p');
+									pp1.classname = 'xh-zhengwen mui-ellipsis:3';
+									pp1.innerHTML = dataJ[key].title;
+									div2.appendChild(pp1)
+									var div3 = document.createElement('div');
+									div3.className = 'xh-right';
+									var div4 = document.createElement('div');
+									div4.className = 'img-content';
+									div4.style.backgroundImage = 'url('+dataJ[key].images+')';
+									div3.appendChild(div4);
+									div1.appendChild(div2);
+									div1.appendChild(div3);
+
+									li.appendChild(div1);
+									if(pull == 'down') {
+										ul.prepend(li)
+									} else {
+										ul.appendChild(li);
+									}
+
+								})
+			                    if(pull == 'down'){
+			                    	ul.prepend(divDate);
+			                    }
+			                    
+			                    
+			                },
+			                error: function(xhr, type, errorThrown) {
+			                    plus.nativeUI.toast(errorThrown);
+			                }
+			            });
+
+					};
+
+				});
+			})(mui);
+			
+			//点击新闻进入详情
+			function openNew(id){
+				var newWV = plus.webview.create('zhihuDetail.html?ID='+id, 'new');
+				newWV.show('slide-in-bottom', 300);
+				
+			};
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>便签</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/app/index.css" rel="stylesheet" />
+		<link href="../css/iconfont.css" rel="stylesheet"/>
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js" ></script>
+		<!--便签样式导入-->
+    	<link rel="stylesheet" href="../css/app/shortnote.css" />
+		<!--便签js导入-->
+		<script type="text/javascript" src="../js/app/shortnote.js" ></script>
+	</head>
+
+	<body>
+		
+		<!-- 便签模块 -->
+		<div >
+			<header class="mui-bar mui-bar-nav note-header-nav" style="background: rgba(27,130,210,255);height: 50px;">
+				<div class="onte-nav-sub">
+					<span class="edit-note mui-pull-left"  style="color: #FFFFFF;font-size: 16px;line-height: 50px;top: 0;">编辑</span>
+				    <h1 class="mui-title" style="color: #FFFFFF;line-height: 50px;">便签</h1>
+				    <span class="add-note mui-pull-right" style="color: #FFFFFF;font-size: 20px;line-height: 50px;top: 0;">+</span>
+				</div>
+			</header>
+			
+			<!-- 便签主体内容部分 -->
+			<div class="mui-content">
+				<!--便签显示区域-->
+			    <div class="note-item-wrapper"></div>
+			    
+		    	<!-- 底部删除按钮 -->
+		    	<div class="del-div bottom-div">
+		    		<div id="delBtn">删除</div>
+		    	</div>
+			</div>
+		</div>
+		
+		
+		
+<script>
+	//初始化
+	mui.init({
+	    keyEventBind: {
+	        backbutton: true  // 打开back按键监听
+	    },
+			// 配置具体需要监听的手势事件
+		gestureConfig:{
+			longtap: true,  // 手机端长按事件，默认为 false
+		}
+	});
+		    
+	// 移动端back键事件
+//	mui.back = function () {
+//		plus.webview.open("index.html");
+//	}		
+	
+		
+			
+
+			
+</script>
+				
+	</body>
+</html>
+

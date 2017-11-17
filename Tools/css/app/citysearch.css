@@ -1,0 +1,196 @@
+/*
+ * 城市查询css
+ */
+.city-search,
+.hot-city {
+	width: 100%;
+}
+
+/*城市搜索区域*/
+.city-search {
+	position: relative;
+	height: 150px;
+	color: #FFFFFF;
+	/*background-image: url(../../images/city5.jpg);*/
+	background-color: rgba(27,130,210,255);
+	background-repeat:  no-repeat;
+	background-size: cover;
+}
+
+.close-search {
+	position: fixed;
+	right: 15px;
+	top: 12px;
+	font-size: 28px;
+	color: #FFFFFF !important;
+}
+
+.search-input-wrapper {
+	position: absolute;
+	left: 20px;
+	top: 60%;
+	width: 90%;
+}
+
+.inputwrapper-toggleClass {
+	position: relative;
+	left: 20px;
+	top: 60%;
+	width: 72%;
+}
+
+.search-input-wrapper .search-input,
+.to-search {
+	display: inline-block;
+}
+
+.search-input-wrapper .search-input {
+	display: inline-block;
+	border-radius: 20px 0 0 20px;
+	width: 75%;
+	margin: 0;
+	color: #000000;
+}
+
+.input-toggleClass {
+	display: inline-block !important;
+	border-radius: 20px !important;
+	width: 100% !important;
+	margin: 0 !important;
+	color: #000000 !important;
+}
+
+/*立即搜索*/
+.to-search {
+	height: 40px;
+	width: 24%;
+	border-radius: 0 20px 20px 0;
+	position: absolute;
+	background-color: rgba(27,130,210,255);
+	background-repeat: no-repeat;
+	box-shadow: 0 0 1px 1px #FFFFFF;
+	z-index: 100;
+}
+
+/*元素切换样式*/
+.tosearch-toggleClass {
+	display: none;
+}
+
+.to-search span {
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	font-size: 18px;
+	display: inline-block;
+	z-index: 999 !important;
+	letter-spacing: 5px;
+}
+
+.photo-from {
+	position: absolute;
+	font-size: 14px;
+	left: 67%;
+	top: 87%;
+}
+
+.photo-from span {
+	color: #FF5053;	
+}
+
+/*热门城市*/
+.hot-city {
+	overflow: hidden;
+	overflow-y: overlay;
+}
+
+.hot-city-title {
+	margin: 20px;
+	text-align: center;
+	color: #777777;
+	font-size: 14px;
+	padding: 3px;
+}
+
+.hot-city-show {
+	color: rgba(26, 26, 26, 0.7);
+	font-size: 16px;
+	padding: 5px;
+	height: 450px;
+}
+
+.hot-city-show .city-item:nth-child(1) {
+	position: relative;
+}
+
+.city-item {
+	width: 28%;
+	height: 35px;
+	float: left;
+	position: relative;
+	margin-left: 4%;
+	margin-bottom: 8%;
+	border-radius: 30px;
+	padding-top: 5px;
+	text-align: center;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.city-item span {
+	font-size: 14px;
+}
+
+.city-item .location-icon {
+	display: inline-block;
+	position: absolute;
+	left: 8%;
+	top: 6px;
+	font-size: 18px;
+}
+
+#location {
+	left: 30px;
+	top: 6px;
+	color: #0062CC;
+}
+
+/*内容区域上移*/
+.muicontent-toggle {
+	margin-top: -40px;
+}
+
+/*取消按钮*/
+.cancle-btn {
+	width: 50px;
+	height: 20px;
+	position: absolute;
+	left: 82%;
+	display: none;
+	top: 100px;
+	font-size: 18px;
+	color: #FFFFFF;
+	letter-spacing: 3px;
+}
+
+/*城市搜索页面提示*/
+.search-tips {
+	width: 60%;
+	height: 130px;
+	margin: 15% auto;
+}
+
+.search-tips-img { 
+	display: block;
+	margin: 15px auto;
+}
+
+.search-tips-span { 
+	display: block;
+	text-align: center;
+	color: #999999;
+	font-size: 16px;
+}
+
+.mui-table-toggleClass {
+	display: none;
+}

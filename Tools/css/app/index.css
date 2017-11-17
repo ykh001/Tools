@@ -1,0 +1,701 @@
+/**
+ * 天气首页css
+ */
+/*.index-nav {
+	
+	background-color: rgba(27,130,210,255);
+	box-shadow: none !important; 
+}*/
+
+/*改变首页顶部导航图标样式*/
+.my-nav-icon {
+	color: #FFFFFF !important;
+}
+
+/*改变定位图标大小*/
+#gps-position {
+	display: none;
+	position: absolute;
+	top: 2px;
+	left: 58%;
+	font-size: 18px !important;
+}
+
+/*改变底部菜单选中样式*/
+.mui-active {
+	color: #000000 !important;
+}
+
+/*改变底部菜单字体大小*/
+.mui-tab-label {
+	font-size: 14px !important;
+}
+
+/*底部选项卡*/
+.mui-bar-tab {
+	background-color: rgba(27,130,210,255);
+}
+
+.city-index-view {
+	/*width: 50%;*/
+	height: 10px;
+	/*position: absolute;
+	top: 32px;
+	left: 50%;*/
+	/*margin-left: -25%;*/
+	/*text-align: center;*/
+	margin-left: 10px;
+	font-size: 12px;
+}
+
+.city-index {
+	border: 1px solid #FFFFFF;
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	margin: 0 4px;
+	border-radius: 50%;
+	position: relative;
+	top: -6px;
+}
+
+/*当前显示城市*/
+.cur-show {
+	background-color: #FFFFFF;
+}
+/*内容项*/
+.city-item {
+	width: 45%;
+	height: 35px;
+	float: left;
+	position: relative;
+	margin-left: 4%;
+	margin-bottom: 4%;
+	/*border-radius: 30px;*/
+	padding-top: 5px;
+	text-align: center;
+	background-color: #FFFFFF;
+	border: none;
+	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.city-item span {
+	font-size: 14px;
+	
+}
+
+.header-img{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	right: 10%;
+	top: 10px;
+	background-image: url(../../images/chifan.gif);
+	background-size: cover;
+	
+}
+/*分享*/
+.share-dialog {
+	display: none;
+	width: 96%;
+	height: 200px;
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	margin-left: -48%;
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	z-index: 150;
+}
+
+.share-dialog-title {
+	height: 50px;
+	text-align: center;
+	padding-top: 15px;
+	font-size: 20px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.close-share-dialog {
+	position: absolute;
+	color: #000000;
+	right: 20px;
+	margin-top: -2px;
+	font-size: 16px;
+}
+
+.share-item {
+	width: 100%;
+	height: 150px;
+	text-align: center;
+}
+
+.share-item>img {
+	margin-top: 20px;
+}
+
+.share-item-desc {
+	display: block;
+	position: relative;
+	top: 30px;
+	width: 100%;
+	color: rgba(0, 0, 0, 0.55);
+	text-align: center;
+}
+
+/*自定义遮罩层样式*/
+.mask-view {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.55);
+}
+
+#weather-home-page {
+	/*height: 1100px;*/
+	/*background: url(../../images/bg.jpg);*/
+	background-size: cover;
+	background-color: #ffeeeeee;
+}
+
+.mui-bar-nav .add-location {
+	font-size: 32px;
+	display: inline-block;
+	margin-top: -6px;
+}
+
+.cur-location {
+	display: inline-block;
+	/*width: 40%;*/
+	text-align: center;
+	color: #000000;
+	margin: 5px 10px 0 10px;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 16px;
+}
+
+/*当前位置天气显示区域*/
+.cur-weather {
+	height: 100px;
+	margin-top: 50px;
+	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+/*当前城市天气详情显示*/
+.cur-weather-detail {
+	height: 25%;
+}
+
+.cur-weather-detail-left {
+	float: left;
+	width: 70%;
+	height: 100%;
+}
+
+.cur-weather-detail-right {
+	float: left;
+	width: 30%;
+	height: 100%;
+	margin-top: 10px;
+}
+
+.cur-temperature,
+.wind-scale,
+.cur-weather-otherinfo {
+	color: #FFFFFF;
+}
+
+.cur-temperature {
+	height: 70%;
+	font-size: 50px;
+	padding: 20px 10px;
+	margin-left: 5px;
+}
+
+.cur-temperature sup {
+	position: relative;
+	top: -30px;
+	left: 5px;
+	letter-spacing: 5px;
+}
+
+.cur-temperature sub {
+	position: relative;
+	left: -64px;
+	top: -1px;
+}
+
+.cur-temperature sup:nth-child(2) {
+	font-size: 34px;
+}
+
+.cur-temperature sup:nth-child(3) {
+	font-size: 22px;
+	letter-spacing: 0;
+}
+
+.cur-weather-otherinfo {
+	height: 30%;
+	/*padding: 16px;*/
+	padding-top: 16px;
+	margin: 5px 20px;
+}
+
+.wind-scale-icon,
+.air-pressure-logo,
+.weather-short-view {
+	/*color: #000000;*/
+}
+
+.water-drop-icon {
+	position: relative;
+	top: 2px;
+	left: 5px;
+}
+
+.air-pressure-icon {
+	padding-left: 10px;
+	color: #000000;
+}
+
+.air-quality,
+.weather-short-view {
+	background-color: rgba(34, 34, 34, 0.4);
+	height: 50px;
+	border-radius: 1px;
+	margin: 5px 3px;
+	padding-left: 10px;
+}
+
+.air-quality {
+	font-size: 16px;
+}
+
+.air-quality-graphic {
+	display: block;
+	width: 20px;
+	height: 5px;
+	position: relative;
+	top: 10px;
+	border-radius: 3px;
+	background-color: #F0AD4E;
+}
+
+.air-quality-desc,
+.air-quality-number {
+	/*color: #000000;*/
+}
+
+.air-quality-desc {
+	display: inline-block;
+	margin-right: 15px;
+	margin-top: 18px;
+}
+
+/*天气预报短时查看*/
+.weather-short-view img {
+	margin-top: 12px;
+}
+
+.weather-short-view span {
+	display: inline-block;
+	position: relative;
+	top: -12px;
+	left: 8px;
+	font-size: 16px;
+	letter-spacing: 2px;
+}
+
+
+
+/*样式切换*/
+.boot-toggle {
+	visibility: visible;
+	position: absolute;
+	top: 238px;
+	left: 45.5%;
+}
+
+.travel-tips .umbrella {
+	visibility: hidden;
+	position: absolute;
+	top: 204px;
+	left: 39%;
+}
+
+/*样式切换*/
+.umbrella-toggle {
+	visibility: visible;
+	position: absolute;
+	top: 204px;
+	left: 39%;
+}
+
+.voice-broadcast img {
+	position: absolute;
+	right: 5%;
+}
+
+.voice-broadcast img {
+	padding-top: 30px;
+}
+
+/*.cur-location-forecast-todaytomorrow,
+.preiodtime-wrapper,
+.cur-location-forecast-fifteenday,
+.living-index {
+	background-color: rgba(85, 85, 85, 0.35);
+}*/
+
+/*今天和明天天气预报*/
+.cur-location-forecast-todaytomorrow {
+	height: 11%;
+	color: #FFFFFF;
+	margin: 5px 0;
+}
+
+.weather-today,
+.weather-tomorrow {
+	width: 50%;
+	height: 100%;
+	float: left;
+	position: relative;
+}
+
+.weather-today {
+	border-right: 1px dashed #FFFFFF;
+}
+
+.today-air-quality,
+.tomorrow-air-quality,
+.periodoftime-air-quality {
+	padding: 2px 8px;
+	font-size: 12px;
+	border-radius: 6px;
+	position: relative;
+	top: -2px;
+}
+
+.periodoftime-air-quality {
+	width: 66%;
+	padding: 0 2px;
+	position: relative;
+	left: 50%;
+	margin-left: -33%;
+}
+
+.today-air-quality {
+	background-color: #2AC845;
+}
+
+.weather-today>span,
+.weather-tomorrow>span {
+	display: inline-block;
+	margin: 5px 10px 3px 10px;
+}
+
+.today-temperature,
+.tomorrow-temperature,
+.weather-today-trend,
+.today-trend-icon,
+.weather-tomorrow-trend,
+.tomorrow-trend-icon {
+	display: inline-block;
+}
+
+.today-temperature,
+.tomorrow-temperature {
+	margin-left: 20px;
+}
+	
+.sprit {
+	display: inline-block;
+	margin: 0 3px;
+}
+
+.today-lowest-temperature,
+.tomorrow-lowest-temperature {
+	margin-left: -5px;
+}
+
+.weather-today span:nth-child(2),
+.weather-tomorrow span:nth-child(2) {
+	height: 50%;
+	line-height: 50%;
+	vertical-align: middle;
+}
+
+.weather-today-trend,
+.weather-tomorrow-trend {
+	margin-top: -5px;
+}
+
+.today-trend-icon img,
+.tomorrow-trend-icon img {
+	position: absolute;
+	top: 28px;
+	left: 68%;
+}
+
+.tomorrow-air-quality {
+	background-color: #F0AD4E;
+}
+
+/*其它时段天气信息*/
+.weather-more-info {
+	margin-top: 10px;
+	height: auto;
+	color: #000000;
+	
+}
+
+/*当前城市分时段天气信息显示*/
+.preiodtime-wrapper {
+	margin-top: 10px;
+}
+
+.cur-weather-preiodtime-desc {
+	display: inline-block;
+	margin: 10px 0 2px 0;
+	padding-left: 10px;
+	height: 30px;
+	width: 100%;
+	position: relative;
+	left: 0;
+	/*border-bottom: 1px solid rgba(158, 158, 158, 0.7);*/
+}
+
+.cur-weather-preiodtime {
+	height: 145px;
+	overflow: hidden;
+	overflow-x: scroll;
+}
+
+.weather-preiodtime-wrapper {
+	width: 1440px;
+}
+
+.weather-preiodtime-wrapper div {
+	height: 140px;
+	width: 50px;
+	margin: 0 5px;
+	float: left;
+	font-size: 14px;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.weather-preiodtime-wrapper div>span {
+	display: block;
+	text-align: center;
+}
+
+.weather-time-temperature {
+	display: inline-block;
+}
+
+.weather-time-wind {
+	display: inline-block;
+	margin: 4px 0;
+}
+
+.weather-time-wind .mui-icon-paperplane,
+.weather-time-wind .weather-time-wind-scale {
+	display: inline-block;
+}
+
+.weather-time-wind .mui-icon-paperplane {
+	width: 18px;
+	margin-left: -3px;
+}
+
+.weather-time-wind-scale {
+	position: relative;
+	top: -2px;
+}
+
+.quality-good {
+	background-color: #2AC845;
+}
+
+.quality-common {
+	background-color: #f0ad4e;
+}
+
+/*当前城市七天天气预报*/
+.cur-location-forecast-fifteenday {
+	margin: 10px 0;
+	height: 330px;
+}
+
+.forecast-fifteenday-desc {
+	display: inline-block;
+	padding: 10px 10px;
+	width: 100%;
+	/*border-bottom: 1px solid rgba(158, 158, 158, 0.7);*/
+}
+
+.forecast-day-detail,
+.show-day-range {
+	font-size: 14px;
+}
+
+.forecast-day-detail {
+	margin: 15px;
+	height: 25px;
+	line-height: 25px;
+	position: relative;
+	vertical-align: middle;
+	border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.day, .trend, .temperature {
+	position: relative;
+	top: -5px;
+}
+
+.calendar-day {
+	margin-right: 10px;
+}
+
+.desc-day {
+	position: absolute;
+	left: 14%;
+	top: -5px;
+}
+
+.trend {
+	background-image: url(../../images/sunny_rain.png);
+	background-repeat: no-repeat;
+	background-size: 24px;
+	padding-left: 30px;
+	margin-left: 16%;
+	position: absolute;
+	left: 25%;
+}
+
+.temperature {
+	float: right;
+}
+
+.show-day-range {
+	padding-left: 15px;
+}
+
+.day-range-one,
+.day-range-two {
+	display: inline-block;
+	padding-right: 5px;
+	height: 18px;
+	margin: 2px;
+	border-right: 1px solid rgba(158, 158, 158, 0.7);
+}    	
+
+.day-range-one, 
+.day-range-two, 
+.day-range-three {
+	color: rgba(158, 158, 158, 0.9);
+}
+
+.cur-show {
+	color: #000000;
+}
+
+/*生活指数*/
+.living-index {
+	height: auto;
+	padding-top: 1px;
+}
+
+.living-index-desc {
+	margin: 10px 0 0 0;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	/*border-bottom: 1px solid rgba(158, 158, 158, 0.5);*/
+}
+
+.living-index-item {
+	width: 25%;
+	height: 100px;
+	float: left;
+	font-size: 14px;
+	border-right: 1px dashed rgba(255, 255, 255, 0.1);
+	border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.last-column {
+	border-right: none;
+}
+
+.item-desc,
+.item-type {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.item-desc {
+	margin-top: 40px;
+	padding: 3px;
+}
+
+.item-type {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.lunar-calendar {
+	background: url(../../images/calendar.png) no-repeat 50% 10%;
+}
+
+.dress {
+	background: url(../../images/dress.png) no-repeat 50% 10%;
+}
+
+.more-suit {
+	background: url(../../images/pp.png) no-repeat 50% 10%;
+}
+
+.fill-water {
+	background: url(../../images/magnifier.png) no-repeat 50% 10%;
+}
+
+.not-suit {
+	background: url(../../images/nogood.png) no-repeat 50% 10%;
+}
+
+.more-prone {
+	background: url(../../images/ganmao.png) no-repeat 50% 10%;
+}
+
+.unfavor {
+	background: url(../../images/yd.png) no-repeat 50% 10%;
+	
+}
+.aqi{
+	background: url(../../images/aqi.png) no-repeat 50% 10%;
+}
+.weakest {
+	background: url(../../images/sun_rays.png) no-repeat 50% 10%;
+}
+
+.quoted-price {
+	background: url(../../images/car_wash.png) no-repeat 50% 10%;
+}
+
+.job-search {
+	background: url(../../images/work.png) no-repeat 50% 10%;
+}
+
+.lottery {
+	background: url(../../images/shuangse_ball.png) no-repeat 50% 10%;
+}
+
+.game {
+	background: url(../../images/game.png) no-repeat 50% 10%;
+}

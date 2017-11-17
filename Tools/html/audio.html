@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>音乐搜索器</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/iconfont.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--主题设置-->
+		<link title="default" rel="stylesheet" type="text/css" href="../css/app/default.css" />
+
+		<style>
+			html,
+			body {
+				min-height: 100%;
+				background-color: #FFFFFF;
+			}
+			
+			.animated {
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			
+			@-webkit-keyframes bounceInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 25px, 0);
+					transform: translate3d(0, 25px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 5px, 0);
+					transform: translate3d(0, 5px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			@keyframes bounceInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 25px, 0);
+					transform: translate3d(0, 25px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 5px, 0);
+					transform: translate3d(0, 5px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			.bounce-in-down {
+				-webkit-animation-name: bounceInDown;
+				animation-name: bounceInDown;
+			}
+			
+			@-webkit-keyframes fadeInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			@keyframes fadeInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			.fade-in-down {
+				-webkit-animation-name: fadeInDown;
+				animation-name: fadeInDown;
+			}
+			
+			@-webkit-keyframes bounceOutUp {
+				20% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 20px, 0);
+					transform: translate3d(0, 20px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			@keyframes bounceOutUp {
+				20% {
+					-webkit-transform: translate3d(0, -10px, 0);
+					transform: translate3d(0, -10px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 20px, 0);
+					transform: translate3d(0, 20px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			.bounce-out-up {
+				-webkit-animation-name: bounceOutUp;
+				animation-name: bounceOutUp;
+			}
+			
+			@-webkit-keyframes fadeOutUp {
+				20% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			@keyframes fadeOutUp {
+				20% {
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				40%,
+				45% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0px, 0);
+					transform: translate3d(0, 0px, 0);
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			
+			.fade-out-up {
+				-webkit-animation-name: fadeOutUp;
+				animation-name: fadeOutUp;
+			}
+			
+			.menu-open {
+				height: 100%;
+				width: 100%;
+			}
+			
+			.menu-open .mui-scroll-wrapper {
+				position: absolute;
+				top: 48;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+				width: 100%;
+				overflow: hidden;
+				-webkit-backface-visibility: hidden;
+			}
+			
+			.menu-backdrop {
+				display: none;
+			}
+			
+			.menu-open .menu-backdrop {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				height: 100%;
+				width: 100%;
+				display: block;
+				z-index: 998;
+			}
+			
+			.menu-wrapper {
+				position: absolute;
+				top: 48px;
+				left: 0;
+				right: 0;
+				z-index: 999;
+				text-align: center;
+				background-color: #FFFFFF;
+				width: 100%;
+			}
+			
+			.menu-wrapper.hidden {
+				-webkit-transform: translate3d(0, -100%, 0);
+				transform: translate3d(0, -100%, 0);
+				z-index: -1;
+			}
+			
+			.menu {
+				width: 100%;
+			}
+			
+			.menu .mui-table-view-inverted {
+				color: gray;
+				font-size: 19px;
+			}
+			
+			.menu .mui-table-view-inverted .mui-table-view-cell:after {
+				height: 2px;
+				left: 0;
+				right: 0;
+			}
+			
+			.menu-wrapper.mui-active,
+			.menu-wrapper.mui-active .menu {
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+			
+			#info {
+				padding: 10px 10px;
+			}
+			
+			.mui-active {
+				background-color: #FFFFFF !important;
+			}
+			
+			.mui-table-view-cell {
+				background-color: #FFFFFF;
+				color: #000000;
+				list-style: none;
+			}
+			
+			.mui-input-clear {
+				/*border: 1px solid red !important;*/
+				width: 70% !important;
+			}
+			
+			.button-search {
+				margin-left: 10px;
+				width: 80%;
+				height: 100% !important;
+				border: none !important;
+				background-color: rgba(27, 130, 210, 255);
+				color: #FFFFFF;
+			}
+			#songSearch{
+				border:1px solid #AAAAAA;
+				padding-left: 20px;
+				/*text-align: center;*/
+				/*border-radius: 8px;*/
+			}
+			.mui-table-view-inverted .mui-table-view-cell:after {
+				background-color: #FFFFFF;
+			}
+			
+			.mui-input-row {
+				/*margin-bottom: 10px;*/
+				padding: 10px;
+				background-color: #FFFFFF;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			
+			.mui-navigate-right {
+				padding: 0 !important;
+			}
+			
+			.list-left {
+				float: left;
+				width: 30px;
+				height: 30px;
+				background-size: cover;
+				margin-left: 30px;
+			}
+			
+			.list-right {
+				width: 60%;
+				height: 30px;
+				float: left;
+				/*margin-left: 20px;*/
+				line-height: 30px;
+			}
+			
+			#menu-btn {
+				padding: 10px;
+				background-color: #FFFFFF;
+				color: #000000;
+				font-size: 14px;
+				/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+				border: none;
+			}
+			
+			.song-list {
+				background-color: #FFFFFF;
+				list-style: none;
+				height: 50px;
+				/*border-bottom: 1px solid #000000;*/
+				padding: 5px;
+				margin-bottom: 5px;
+				font-size: 14px;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			
+			.song-left {
+				float: left;
+				width: 30px;
+				height: 30px;
+				margin: 5px;
+				font-size: 30px;
+				padding-top: 5px;
+				color: #777777;
+				background-size: cover;
+				/*border: 1px solid #777777;border-radius: 5px;*/
+			}
+			
+			.song-right {
+				width: 50%;
+				height: 40px;
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.song-title {
+				font-size: 14px;
+				/*overflow:hidden;
+			    text-overflow:ellipsis;
+			    white-space:nowrap;*/
+				display: block;
+			}
+			
+			.song-singer {
+				color: #000000;
+				margin-top: 0;
+			}
+			.song-down {
+				margin-top: 5px;
+				float: right;
+				width: 40px;
+				height: 40px;
+				padding: 5px;
+			}
+			audio{
+				width: 80%;
+				/*float:right;*/
+			}
+			.icon-xiazai{font-size: 25px;color: #777777}
+			#songs_num{
+				background-color: #FFFFFF;
+				list-style: none;
+				height: 30px;
+				padding: 5px;
+				margin-bottom: 5px;
+				font-size: 14px;color: #F37694;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<header class="mui-bar mui-bar-nav detail-nav">
+			<h1 class="mui-title" style="text-align: left;left: 10px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">GANK妹子</h1>
+		</header>-->
+		<header class="mui-bar mui-bar-nav detail-nav">
+			<!--<a id="icon-menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-left"></a>-->
+			<a id="icon-menu" class="mui-action-menu mui-icon  mui-pull-left" style="color: #FFFFFF;font-size: 16px;line-height: 30px;"></a>
+			<!--<a class="mui-action-back mui-btn mui-btn-link mui-pull-right">关闭</a>-->
+			<h1 class="mui-title" style="text-align: center;left: 10px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">音乐搜索器</h1>
+		</header>
+		<div class="mui-content" style="padding-top: 50px;">
+			<button id="menu-btn" type="button" class="mui-btn mui-btn-primary mui-btn-block" style="margin-bottom: 0;font-size: 16px;">
+				点击切换音乐源API<span id="info" style="width:100%;height:40px;font-size: 16px;color: red;">酷狗音乐</span>
+			</button>
+
+			<div class="mui-input-row">
+				<!--<div id="info" style="width:80%;float:left;height:40px">当前音乐源：酷狗音乐</div>-->
+				<label style="width: 30%;height: 40px;padding: 0;">
+					<button type="button" class="button-search" onclick="search()">点击搜索</button>
+				</label>
+				<input type="text" id="songSearch" class="" placeholder="歌曲 / 歌手">
+			</div>
+			<p style="margin:10px">下载的歌曲保存在Android/data/com.ykh.bbx/downloads目录下</p>
+			<div id="player-content" style="height: 48px;display: none;">
+				<!--歌手头像http://mobilecdn.kugou.com/new/app/i/yueku.php?cmd=104&size=100&singer=%E5%94%90%E5%AB%A3-->
+				<div id="singerImg" style="width: 20%;height: 48px;background-image: url(../css/shuaxin/images/16.jpg);float: left;background-size: cover;"></div>
+				<audio src="" id="player" controlsList="nodownload" controls="controls" autoplay="autoplay">
+					Your browser does not support the audio tag.
+				</audio>
+			</div>
+			<li id="songs_num" >
+				
+			</li>
+			<ul class="data-list" id="listdata" style="	padding-left: 0;background-color: #FFFFFF;">
+
+				<!--<li class="song-list">
+					<div class="song-left" style="background-image: url(../css/shuaxin/images/huaji.png);"></div>
+					<div class="song-right" >
+						<span class="song-title mui-ellipsis">好久好久不见好久不见好久不见好久不见好久不见好久不见好久不见不见</span>
+						<h6 class="song-singer mui-ellipsis">唐嫣</h6>
+					</div>
+					<div class="song-down">
+						<audio src="http:\/\/fs.open.kugou.com\/5179d828dfb686ca4bec9d69873d2f1e\/59bf564b\/G008\/M0A\/1A\/03\/qIYBAFULOImACGrhAEWZRbruKdY560.mp3" id="player" controls="controls">
+							设备不支持
+						</audio>
+					</div>
+					<div class="song-down">
+						<span class="mui-icon mui-icon-download" style="font-size: 30px;"></span>
+					</div>
+				</li>-->
+				<!--<li class="song-list">
+					<div class="song-left iconfont icon-bofang" ></div>
+					<div class="song-right">
+						<span class="song-title mui-ellipsis">好久好久不见</span>
+						<h6 class="song-singer mui-ellipsis">唐嫣</h6>
+					</div>
+					<div class="song-down">
+						<span class="iconfont icon-xiazai" style="font-size:25px;"></span>
+					</div>
+				</li>-->
+				
+			</ul>
+
+		</div>
+		<div id="menu-wrapper" class="menu-wrapper hidden">
+			<div id="menu" class="menu">
+				<ul class="mui-table-view mui-table-view-inverted">
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">
+							<!--<div class="list-left" style="background-image: url(http://img.9ku.com/geshoutuji/singertuji/3/35635/35635_1.jpg)"></div>-->
+							<!--<div class="list-right">酷狗音乐</div>-->
+							酷狗音乐
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">酷我音乐</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">QQ音乐</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">咪咕音乐</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">5sing原创</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="javascript:;">5sing翻唱</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		<div id="menu-backdrop" class="menu-backdrop"></div>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+
+			var menuWrapper = document.getElementById("menu-wrapper");
+			var menu = document.getElementById("menu");
+			var menuWrapperClassList = menuWrapper.classList;
+			var backdrop = document.getElementById("menu-backdrop");
+			var info = document.getElementById("info");
+			var search_api = '酷狗音乐';
+
+			backdrop.addEventListener('tap', toggleMenu);
+			document.getElementById("menu-btn").addEventListener('tap', toggleMenu);
+			document.getElementById("icon-menu").addEventListener('tap', toggleMenu)
+			//下沉菜单中的点击事件
+			mui('#menu').on('tap', 'a', function() {
+				toggleMenu();
+				info.innerHTML = this.innerText;
+				search_api = this.innerText;
+			});
+			var busying = false;
+
+			function toggleMenu() {
+				if(busying) {
+					return;
+				}
+				busying = true;
+				if(menuWrapperClassList.contains('mui-active')) {
+					document.body.classList.remove('menu-open');
+					menuWrapper.className = 'menu-wrapper fade-out-up animated';
+					menu.className = 'menu bounce-out-up animated';
+					setTimeout(function() {
+						backdrop.style.opacity = 0;
+						menuWrapper.classList.add('hidden');
+					}, 500);
+				} else {
+					document.body.classList.add('menu-open');
+					menuWrapper.className = 'menu-wrapper fade-in-down animated mui-active';
+					menu.className = 'menu bounce-in-down animated';
+					backdrop.style.opacity = 1;
+				}
+				setTimeout(function() {
+					busying = false;
+				}, 500);
+			}
+
+			var search = function() {
+				//隐藏播放器
+				document.getElementById("player-content").style.display = 'none';
+				document.getElementById('songs_num').innerHTML = '';
+				var page = 1;
+				var query = document.getElementById('songSearch').value;
+				ul = document.querySelector('#listdata');
+				ul.innerHTML = '';
+				refresh(page);
+
+			}
+			var refresh = function(page) {
+				var query = document.getElementById('songSearch').value;
+
+				if(query.length == 0) {
+					mui.toast("未输入");
+				} else {
+					mui.toast("第"+page+"页")
+					if(search_api == "酷狗音乐") {
+						kuGouSearch(query, page);
+					}
+					if(search_api == "QQ音乐") {
+						qqSearch(query, page);
+					}
+					if(search_api == "酷我音乐"){
+						kuWoSearch(query, page);
+					}
+					if(search_api == "咪咕音乐"){
+						miGuSearch(query, page);
+					}
+					if(search_api == "5sing原创"){
+						singYSearch(query, page);
+					}
+					if(search_api == "5sing翻唱"){
+						singFSearch(query, page);
+					}
+				}
+			}
+			/***
+			 * 下载音乐
+			 */
+			$(document).on('click', ".icon-xiazai", function(e) {
+
+				//获取歌曲hash值
+				var song_hash = this.getAttribute("hash");
+				if(search_api == "酷狗音乐") {
+					kuGouDown(song_hash);
+				}
+				if(search_api == "QQ音乐") {
+					qqDown(song_hash);
+				}
+				if(search_api == "酷我音乐"){
+					kuWoDown(song_hash);
+				}
+				if(search_api == "咪咕音乐"){
+					var songName = document.getElementById('songName').innerHTML;
+					miGuDown(song_hash,songName);
+				}
+				if(search_api == "5sing原创"){
+					var songName = document.getElementById('songName').innerHTML;
+					singYDown(song_hash);
+				}
+				if(search_api == "5sing翻唱"){
+					singFDown(song_hash);
+				}
+				
+			});
+			/***
+			 * 酷狗API开始------------------------------------------------
+			 */
+			var kuGouSearch = function(query, page) {
+				//			alert(query)
+				$.get("http://mobilecdn.kugou.com/api/v3/search/song?keyword=" + query + "&format=json&page=" + page + "&pagesize=20", {
+
+				}, function(data) {
+					//json化
+					var jsonObj = JSON.parse(data);
+					if(page==1){
+						document.getElementById('songs_num').innerHTML = "相关歌曲"+jsonObj.data.total+"首";
+					}
+					if(jsonObj.status == 0) {
+						mui.toast("搜索失败，api可能已失效！")
+					} else {
+						var songData = jsonObj.data.info;
+
+						ul = document.querySelector('#listdata');
+						
+						mui.each(songData, function(key, value) {
+							//						
+							var li = document.createElement('li');
+							li.className = 'song-list';
+							var div1 = document.createElement('div');
+							div1.className = 'song-left iconfont icon-bofang';
+							div1.setAttribute("singername", songData[key].singername);
+							div1.setAttribute("hash", songData[key].hash);
+							var div2 = document.createElement('div');
+							div2.className = 'song-right';
+							var s_title = document.createElement('span');
+							s_title.className = 'song-title mui-ellipsis';
+							s_title.innerHTML = songData[key].songname;
+							var s_singer = document.createElement('h6');
+							s_singer.className = 'song-singer mui-ellipsis';
+							s_singer.innerHTML = songData[key].singername;
+							var div3 = document.createElement('div');
+							div3.className = 'song-down';
+							var down = document.createElement('span');
+							down.className = 'iconfont icon-xiazai';
+							down.setAttribute("hash", songData[key].hash);
+							div2.appendChild(s_title);
+							div2.appendChild(s_singer);
+							div3.appendChild(down);
+							li.appendChild(div1);
+							li.appendChild(div2);
+							li.appendChild(div3);
+
+							ul.appendChild(li);
+
+						});
+
+					}
+
+				});
+			}
+
+			var kuGouDown = function(song_hash) {
+				//初始化下载地址,歌曲名,歌曲格式
+				var fileSrc = '',
+					songName = '',
+					extName = '';
+				//根据hash获取url
+				$.get("http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&hash=" + song_hash, {
+
+				}, function(data) {
+					//json化
+					var jsonUrl = JSON.parse(data);
+					fileSrc = jsonUrl.url;
+					songName = jsonUrl.fileName;
+					extName = jsonUrl.extName;
+					var timeLength = (jsonUrl.timeLength/60).toFixed(2)+'分钟';
+					var fileSize = (Math.round(jsonUrl.fileSize)/1024/1024).toFixed(2)+'M';
+					
+					var actionList = {
+						title: '歌曲名称:'+songName,
+						cancel: "取消",
+						buttons: [{
+							title: "下载此歌曲< "+fileSize+" / "+timeLength+" >",
+						}]
+					};
+					//弹出actionSheet选项
+					plus.nativeUI.actionSheet(actionList, function(e) {
+						if(e.index == 1) {
+							//下载进度条
+							mui('#menu-btn').progressbar().show();
+							//创建一个下载任务
+							var fileDtask = plus.downloader.createDownload(fileSrc, {
+								filename: "_downloads/" + songName + "." + extName
+								//						method: "GET"
+							}, function(d, status) {
+								//alert(d.filename)
+	
+								//下载完成的回调函数
+								if(status == 200) {
+									//下载完成关闭进度条
+									mui('#menu-btn').progressbar().hide();
+									return mui.toast('下载成功！');
+								} else {
+									mui.toast("下载失败!" + status);
+									mui('#menu-btn').progressbar().hide();
+								}
+							});
+							fileDtask.start(); //开始下载任务
+						}
+					});
+					
+				});
+			}
+			
+			//------------------------------------------------------------------
+			/***
+			 * QQ音乐API
+			 */
+			var qqSearch = function(query, page) {
+				//alert(query)
+				$.get("https://c.y.qq.com/soso/fcgi-bin/search_for_qq_cp?w=" + query + "&n=20&format=json&p=" + page, {
+
+				}, function(data) {
+					//json化
+					var jsonObj = JSON.parse(data);
+					if(page==1){
+						document.getElementById('songs_num').innerHTML = "相关歌曲"+jsonObj.data.song.totalnum+"首";
+					}
+					if(jsonObj.data.length == 0) {
+						mui.toast("搜索失败，api可能已失效！")
+					} else {
+						var songData = jsonObj.data.song.list;
+//						alert(songData[0].singer[0].name)
+						ul = document.querySelector('#listdata');
+						
+						mui.each(songData, function(key, value) {
+							//获取歌手list	
+							var singerNamelist='';
+							for(var i=0;i<songData[key].singer.length;i++){
+								singerNamelist = songData[key].singer[i].name+" "+singerNamelist;
+							}
+							var li = document.createElement('li');
+							li.className = 'song-list';
+							var div1 = document.createElement('div');
+							div1.className = 'song-left iconfont icon-bofang';
+							div1.setAttribute("singername", singerNamelist);
+							div1.setAttribute("hash", songData[key].songmid);
+							var div2 = document.createElement('div');
+							div2.className = 'song-right';
+							var s_title = document.createElement('span');
+							s_title.className = 'song-title mui-ellipsis';
+							s_title.innerHTML = songData[key].songname;
+							var s_singer = document.createElement('h6');
+							s_singer.className = 'song-singer mui-ellipsis';
+							s_singer.innerHTML = singerNamelist;
+							var div3 = document.createElement('div');
+							div3.className = 'song-down';
+							var down = document.createElement('span');
+							down.className = 'iconfont icon-xiazai';
+							down.setAttribute("hash", songData[key].songmid);
+							div2.appendChild(s_title);
+							div2.appendChild(s_singer);
+							div3.appendChild(down);
+							li.appendChild(div1);
+							li.appendChild(div2);
+							li.appendChild(div3);
+
+							ul.appendChild(li);
+
+						});
+
+					}
+
+				});
+			}
+			
+			var qqDown = function(song_hash) {
+				
+				//初始化下载地址,歌曲名,歌曲格式
+				var fileSrc = '',
+					songName = '',
+					extName = '';
+				//根据hash获取url
+				$.get("https://c.y.qq.com/v8/fcg-bin/fcg_play_single_song.fcg?format=json&songmid=" + song_hash, {
+
+				}, function(data) {
+					//json化
+//					var jsonUrl = JSON.parse(data);
+
+					var temp = ""; 
+					for(var i in data.url){//用javascript的for/in循环遍历对象的属性 
+						temp += data.url[i]; 
+					} 
+					fileSrc = 'http://'+temp;
+					songName = data.data[0].name;
+					//获取歌手list	
+					var singerNamelist='';
+					for(var i = 0;i < data.data[0].singer.length;i++){
+						singerNamelist = data.data[0].singer[i].name+" "+singerNamelist;
+					}
+					extName = 'mp3';
+//					var timeLength = (100/60).toFixed(2)+'分钟';
+//					var fileSize = (Math.round(100)/1024/1024).toFixed(2)+'M';
+					
+					var actionList = {
+						title: '歌曲名称:'+songName+"-"+singerNamelist,
+						cancel: "取消",
+						buttons: [{
+							title: "下载此歌曲",
+						}] 
+					};
+					//弹出actionSheet选项
+					plus.nativeUI.actionSheet(actionList, function(e) {
+						if(e.index == 1) {
+							//下载进度条
+							mui('#menu-btn').progressbar().show();
+							//创建一个下载任务
+							var fileDtask = plus.downloader.createDownload(fileSrc, {
+								filename: "_downloads/" + songName +"-"+singerNamelist+ "." + extName
+								//method: "GET"
+							}, function(d, status) {
+//								alert(d.filename)
+	
+								//下载完成的回调函数
+								if(status == 200) {
+									//下载完成关闭进度条
+									mui('#menu-btn').progressbar().hide();
+									return mui.toast('下载成功！');
+								} else {
+									mui.toast("下载失败!" + status);
+									mui('#menu-btn').progressbar().hide();
+								}
+							});
+							fileDtask.start(); //开始下载任务
+						}
+					});
+					
+				});
+			}
+			
+			//------------------------------------------------------------------
+			/***
+			 * 酷我音乐API
+			 */
+			var kuWoSearch = function(query, page) {
+				page = page-1;
+				$.get("http://search.kuwo.cn/r.s?all="+query+"&ft=music&itemset=web_2013&pn="+page+"&rn=20&rformat=json&encoding=utf8", {
+
+				}, function(data) {
+					//string转json对象
+					var dataJson = eval("(" + data + ")");
+					if(page==0){
+						document.getElementById('songs_num').innerHTML = "相关歌曲"+dataJson.TOTAL+"首";
+					}
+					if(dataJson.TOTAL == 0) {
+						mui.toast("搜索失败，api可能已失效！")
+					} else {
+						var songData = dataJson.abslist;
+						
+						ul = document.querySelector('#listdata');
+						
+						mui.each(songData, function(key, value) {
+							//获取歌手list	
+							var li = document.createElement('li');
+							li.className = 'song-list';
+							var div1 = document.createElement('div');
+							div1.className = 'song-left iconfont icon-bofang';
+							div1.setAttribute("singername",songData[key].ARTIST );
+							div1.setAttribute("hash", songData[key].MUSICRID);
+							var div2 = document.createElement('div');
+							div2.className = 'song-right';
+							var s_title = document.createElement('span');
+							s_title.className = 'song-title mui-ellipsis';
+							s_title.innerHTML = songData[key].SONGNAME;
+							var s_singer = document.createElement('h6');
+							s_singer.className = 'song-singer mui-ellipsis';
+							s_singer.innerHTML = songData[key].ARTIST;
+							var div3 = document.createElement('div');
+							div3.className = 'song-down';
+							var down = document.createElement('span');
+							down.className = 'iconfont icon-xiazai';
+							down.setAttribute("hash", songData[key].MUSICRID);
+							div2.appendChild(s_title);
+							div2.appendChild(s_singer);
+							div3.appendChild(down);
+							li.appendChild(div1);
+							li.appendChild(div2);
+							li.appendChild(div3);
+
+							ul.appendChild(li);
+
+						});
+
+					}
+
+				});
+			}
+			
+			var kuWoDown = function(song_hash) {
+				
+				//初始化下载地址,歌曲名,歌手,歌曲格式
+				var fileSrc = '',
+					songName = '',
+					singer = '',
+					extName = '';
+				//根据hash获取url
+				//压缩版http://antiserver.kuwo.cn/anti.s?type=convert_url&rid="+song_hash+"&format=aac|mp3&response=url
+				//完整版http://antiserver.kuwo.cn/anti.s?format={$SongType}%7Cmp3&rid="+song_hash+"&response=url&type=convert_url
+				$.get("http://antiserver.kuwo.cn/anti.s?format={$SongType}%7Cmp3&rid="+song_hash+"&response=url&type=convert_url", {
+
+				}, function(data) {
+					fileSrc = data;
+				})
+				//根据hash获取歌曲信息
+				$.get("http://player.kuwo.cn/webmusic/st/getNewMuiseByRid?rid=" + song_hash, {
+
+				}, function(data) {
+					//
+					var xmldoc = loadXML(data)
+					songName = xmldoc.getElementsByTagName("name")[0].firstChild.nodeValue;
+					singer = xmldoc.getElementsByTagName("singer")[0].firstChild.nodeValue;
+					extName = 'mp3';
+					
+					var actionList = {
+						title: '歌曲名称:' + songName + "-" + singer,
+						cancel: "取消",
+						buttons: [{
+							title: "下载此歌曲",
+						}] 
+					};
+					//弹出actionSheet选项
+					plus.nativeUI.actionSheet(actionList, function(e) {
+						if(e.index == 1) {
+							//下载进度条
+							mui('#menu-btn').progressbar().show();
+							//创建一个下载任务
+							var fileDtask = plus.downloader.createDownload(fileSrc, {
+								filename: "_downloads/" + songName + "-" + singer + "." + extName
+								//method: "GET"
+							}, function(d, status) {
+//								alert(d.filename)
+	
+								//下载完成的回调函数
+								if(status == 200) {
+									//下载完成关闭进度条
+									mui('#menu-btn').progressbar().hide();
+									return mui.toast('下载成功！');
+								} else {
+									mui.toast("下载失败!" + status);
+									mui('#menu-btn').progressbar().hide();
+								}
+							});
+							fileDtask.start(); //开始下载任务
+						}
+					});
+					
+				});
+			}
+			//---------------------------------------------------------------------------------------------
+			/***
+			 * 咪咕音乐API开始------------------------------------------------
+			 */
+			var miGuSearch = function(query, page) {
+				$.get("http://m.music.migu.cn/music-h5/search/searchAll.json?keyWord=" + query + "&type=song&pageNo=" + page + "&pageSize=20", {
+
+				}, function(data) {
+					
+					if(data.data.count == 0) {
+						mui.toast("搜索失败，api可能已失效！")
+					} else {
+						if(page==1){
+							document.getElementById('songs_num').innerHTML = "相关歌曲"+data.data.count+"首";
+						}
+						var songData = data.data.list;
+
+						ul = document.querySelector('#listdata');
+						
+						mui.each(songData, function(key, value) {
+							//						
+							var li = document.createElement('li');
+							li.className = 'song-list';
+							var div1 = document.createElement('div');
+							div1.className = 'song-left iconfont icon-bofang';
+							div1.setAttribute("singername", songData[key].singerName);
+							div1.setAttribute("hash", songData[key].id);
+							var div2 = document.createElement('div');
+							div2.className = 'song-right';
+							var s_title = document.createElement('span');
+							s_title.className = 'song-title mui-ellipsis';
+							s_title.id = 'songName';
+							s_title.innerHTML = songData[key].songName;
+							var s_singer = document.createElement('h6');
+							s_singer.className = 'song-singer mui-ellipsis';
+							s_singer.innerHTML = songData[key].singerName;
+							var div3 = document.createElement('div');
+							div3.className = 'song-down';
+							var down = document.createElement('span');
+							down.className = 'iconfont icon-xiazai';
+							down.setAttribute("hash", songData[key].id);
+							div2.appendChild(s_title);
+							div2.appendChild(s_singer);
+							div3.appendChild(down);
+							li.appendChild(div1);
+							li.appendChild(div2);
+							li.appendChild(div3);
+
+							ul.appendChild(li);
+
+						});
+
+					}
+
+				});
+			}
+
+			var miGuDown = function(song_hash,songName) {
+				//初始化下载地址,歌手,歌曲格式
+				var fileSrc = '',
+					singerName = '',
+					extName = '';
+				//根据hash获取url
+				$.get("http://music.migu.cn/webfront/player/findsong.do?itemid="+song_hash+"&type=song", {
+
+				}, function(data) {
+					
+					fileSrc = data.msg[0].mp3;
+					extName = "mp3";
+					singerName = data.msg[0].singerName;
+					
+					var actionList = {
+						title: '歌曲名称:'+songName+"-"+singerName,
+						cancel: "取消",
+						buttons: [{
+							title: "下载此歌曲",
+						}]
+					};
+					//弹出actionSheet选项
+					plus.nativeUI.actionSheet(actionList, function(e) {
+						if(e.index == 1) {
+							//下载进度条
+							mui('#menu-btn').progressbar().show();
+							//创建一个下载任务
+							var fileDtask = plus.downloader.createDownload(fileSrc, {
+								filename: "_downloads/" + songName+"-"+singerName + "." + extName
+								//method: "GET"
+							}, function(d, status) {
+								//alert(d.filename)
+	
+								//下载完成的回调函数
+								if(status == 200) {
+									//下载完成关闭进度条
+									mui('#menu-btn').progressbar().hide();
+									return mui.toast('下载成功！');
+								} else {
+									mui.toast("下载失败!" + status);
+									mui('#menu-btn').progressbar().hide();
+								}
+							});
+							fileDtask.start(); //开始下载任务
+						}
+					});
+					
+				});
+			}
+			/***
+			 * 5sing原创API开始------------------------------------------------
+			 */
+			var singYSearch = function(query, page) {
+				$.get("http://goapi.5sing.kugou.com/search/search?k="+query+"&t=0&filterType=1&ps=20&pn="+page, {
+
+				}, function(data) {
+					var jsonData = JSON.parse(data);
+					
+					if(!jsonData.success) {
+						mui.toast("搜索失败，api可能已失效！")
+					} else {
+						
+						var songData = jsonData.data.songArray;
+
+						ul = document.querySelector('#listdata');
+						
+						mui.each(songData, function(key, value) {
+							//						
+							var li = document.createElement('li');
+							li.className = 'song-list';
+							var div1 = document.createElement('div');
+							div1.className = 'song-left iconfont icon-bofang';
+							div1.setAttribute("singername", songData[key].singer);
+							div1.setAttribute("hash", songData[key].songId);
+							var div2 = document.createElement('div');
+							div2.className = 'song-right';
+							var s_title = document.createElement('span');
+							s_title.className = 'song-title mui-ellipsis';
+							s_title.id = 'songName';
+							s_title.innerHTML = songData[key].songName;
+							var s_singer = document.createElement('h6');
+							s_singer.className = 'song-singer mui-ellipsis';
+							s_singer.innerHTML = songData[key].singer;
+							var div3 = document.createElement('div');
+							div3.className = 'song-down';
+							var down = document.createElement('span');
+							down.className = 'iconfont icon-xiazai';
+							down.setAttribute("hash", songData[key].songId);
+							div2.appendChild(s_title);
+							div2.appendChild(s_singer);
+							div3.appendChild(down);
+							li.appendChild(div1);
+							li.appendChild(div2);
+							li.appendChild(div3);
+
+							ul.appendChild(li);
+
+						});
+
+					}
+
+				});
+			}
+
+			var singYDown = function(song_hash) {
+				//初始化下载地址,歌手,歌曲名,歌曲格式
+				var fileSrc = '',
+					singerName = '',
+					songName = '',
+					extName = '';
+				//根据hash获取url
+				$.get("http://mobileapi.5sing.kugou.com/song/newget?songid="+song_hash+"&songtype=yc", {
+
+				}, function(data) {
+					
+					
+					songName = data.data.SN;
+					fileSrc = data.data.KL;
+					extName = "mp3";
+					singerName = data.data.user.NN;
+
+					var actionList = {
+						title: '歌曲名称:'+songName+"-"+singerName,
+						cancel: "取消",
+						buttons: [{
+							title: "下载此歌曲",
+						}]
+					};
+					//弹出actionSheet选项
+					plus.nativeUI.actionSheet(actionList, function(e) {
+						if(e.index == 1) {
+							//下载进度条
+							mui('#menu-btn').progressbar().show();
+							//创建一个下载任务
+							var fileDtask = plus.downloader.createDownload(fileSrc, {
+								filename: "_downloads/" + songName+"-"+singerName + "." + extName
+							}, function(d, status) {
+								//alert(d.filename)
+	
+								//下载完成的回调函数
+								if(status == 200) {
+									//下载完成关闭进度条
+									mui('#menu-btn').progressbar().hide();
+									return mui.toast('下载成功！');
+								} else {
+									mui.toast("下载失败!" + status);
+									mui('#menu-btn').progressbar().hide();
+								}
+							});
+							fileDtask.start(); //开始下载任务
+						}
+					});
+					
+				});
+			}
+			/***
+			 * 5sing翻唱API开始------------------------------------------------
+			 */
+			var singFSearch = function(query, page) {
+				$.get("http://goapi.5sing.kugou.com/search/search?k="+query+"&t=0&filterType=2&ps=20&pn="+page, {
+
+				}, function(data) {
+					var jsonData = JSON.parse(data);
+					
+					if(!jsonData.success) {
+						mui.toast("搜索失败，api可能已失效！")
+					} else {
+						
+						var songData = jsonData.data.songArray;
+
+						ul = document.querySelector('#listdata');
+						
+						mui.each(songData, function(key, value) {
+							//						
+							var li = document.createElement('li');
+							li.className = 'song-list';
+							var div1 = document.createElement('div');
+							div1.className = 'song-left iconfont icon-bofang';
+							div1.setAttribute("singername", songData[key].singer);
+							div1.setAttribute("hash", songData[key].songId);
+							var div2 = document.createElement('div');
+							div2.className = 'song-right';
+							var s_title = document.createElement('span');
+							s_title.className = 'song-title mui-ellipsis';
+							s_title.id = 'songName';
+							s_title.innerHTML = songData[key].songName;
+							var s_singer = document.createElement('h6');
+							s_singer.className = 'song-singer mui-ellipsis';
+							s_singer.innerHTML = songData[key].singer;
+							var div3 = document.createElement('div');
+							div3.className = 'song-down';
+							var down = document.createElement('span');
+							down.className = 'iconfont icon-xiazai';
+							down.setAttribute("hash", songData[key].songId);
+							div2.appendChild(s_title);
+							div2.appendChild(s_singer);
+							div3.appendChild(down);
+							li.appendChild(div1);
+							li.appendChild(div2);
+							li.appendChild(div3);
+
+							ul.appendChild(li);
+
+						});
+
+					}
+
+				});
+			}
+
+			var singFDown = function(song_hash) {
+				//初始化下载地址,歌手,歌曲名,歌曲格式
+				var fileSrc = '',
+					singerName = '',
+					songName = '',
+					extName = '';
+				//根据hash获取url
+				$.get("http://mobileapi.5sing.kugou.com/song/newget?songid="+song_hash+"&songtype=fc", {
+
+				}, function(data) {
+					
+					
+					songName = data.data.SN;
+					fileSrc = data.data.KL;
+					extName = "mp3";
+					singerName = data.data.user.NN;
+
+					var actionList = {
+						title: '歌曲名称:'+songName+"-"+singerName,
+						cancel: "取消",
+						buttons: [{
+							title: "下载此歌曲",
+						}]
+					};
+					//弹出actionSheet选项
+					plus.nativeUI.actionSheet(actionList, function(e) {
+						if(e.index == 1) {
+							//下载进度条
+							mui('#menu-btn').progressbar().show();
+							//创建一个下载任务
+							var fileDtask = plus.downloader.createDownload(fileSrc, {
+								filename: "_downloads/" + songName+"-"+singerName + "." + extName
+							}, function(d, status) {
+								//alert(d.filename)
+	
+								//下载完成的回调函数
+								if(status == 200) {
+									//下载完成关闭进度条
+									mui('#menu-btn').progressbar().hide();
+									return mui.toast('下载成功！');
+								} else {
+									mui.toast("下载失败!" + status);
+									mui('#menu-btn').progressbar().hide();
+								}
+							});
+							fileDtask.start(); //开始下载任务
+						}
+					});
+					
+				});
+			}
+			//---------------------------------------------------------------------------------------------
+			//播放音乐
+			$(document).on('click', ".song-left", function(e) {
+				//显示播放器
+				document.getElementById("player-content").style.display = 'block';
+				//获取歌手名、歌曲hash值  
+				var singername = this.getAttribute("singername");
+				var song_hash = this.getAttribute("hash");
+				//获取歌手封面singerImg
+				$.get("http://mobilecdn.kugou.com/new/app/i/yueku.php?cmd=104&size=100&singer="+singername, {
+
+				}, function(data) {
+					//json化
+					var singernameUrl = JSON.parse(data).url;
+					if(singernameUrl != "undefined"){
+						document.getElementById("singerImg").style.backgroundImage = "url("+singernameUrl+")";
+					}
+				});
+//				//根据hash获取播放地址url
+				if(search_api == "酷狗音乐") {
+					$.get("http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&hash="+song_hash, {
+
+					}, function(data) {
+						//json化
+						var playerSrc = JSON.parse(data).url;
+						document.getElementById("player").src = playerSrc;
+						
+					});
+				}
+				if(search_api == "QQ音乐") {
+					$.get("https://c.y.qq.com/v8/fcg-bin/fcg_play_single_song.fcg?format=json&songmid="+song_hash, {
+
+					}, function(data) {
+						var temp = ""; 
+						for(var i in data.url){//用javascript的for/in循环遍历对象的属性 
+							temp += data.url[i]; 
+						} 
+						var playerSrc = 'http://'+temp;
+						document.getElementById("player").src = playerSrc;
+						
+					});
+				}
+				if(search_api == "酷我音乐") {
+					$.get("http://antiserver.kuwo.cn/anti.s?type=convert_url&rid="+song_hash+"&format=aac|mp3&response=url", {
+
+					}, function(data) {
+						document.getElementById("player").src = data;
+					});
+				}
+				if(search_api == "咪咕音乐") {
+					$.get("http://music.migu.cn/webfront/player/findsong.do?itemid="+song_hash+"&type=song", {
+
+					}, function(data) {
+						document.getElementById("player").src = data.msg[0].mp3;
+					});
+				}
+				if(search_api == "5sing原创"){
+					$.get("http://mobileapi.5sing.kugou.com/song/newget?songid="+song_hash+"&songtype=yc", {
+
+					}, function(data) {
+						document.getElementById("player").src = data.data.KL;
+					});	
+				}
+				if(search_api == "5sing翻唱"){
+					$.get("http://mobileapi.5sing.kugou.com/song/newget?songid="+song_hash+"&songtype=fc", {
+
+					}, function(data) {
+						document.getElementById("player").src = data.data.KL;
+					});	
+				}
+				
+				//返回顶部播放器位置
+				$('html, body').animate({
+		            scrollTop: 0
+		        }, 1000);
+
+
+			});
+			
+			
+			//判断滚动条距离
+			$(window).scroll(function(){
+			　　	var scrollTop = $(this).scrollTop();
+			　　	var scrollHeight = $(document).height();
+			　　	var windowHeight = $(this).height();
+			　　	if(scrollHeight-(scrollTop + windowHeight) == 0 ){
+					var liNum = document.getElementsByClassName('song-list')
+					var nextPage = liNum.length/20+1
+			　　　　	refresh(nextPage);
+			
+			　　	}
+			});
+			
+			
+			
+	//工具		
+	loadXML = function(xmlString){
+        var xmlDoc=null;
+        //判断浏览器的类型
+        //支持IE浏览器 
+        if(!window.DOMParser && window.ActiveXObject){   //window.DOMParser 判断是否是非ie浏览器
+            var xmlDomVersions = ['MSXML.2.DOMDocument.6.0','MSXML.2.DOMDocument.3.0','Microsoft.XMLDOM'];
+            for(var i=0;i<xmlDomVersions.length;i++){
+                try{
+                    xmlDoc = new ActiveXObject(xmlDomVersions[i]);
+                    xmlDoc.async = false;
+                    xmlDoc.loadXML(xmlString); //loadXML方法载入xml字符串
+                    break;
+                }catch(e){
+                }
+            }
+        }
+        //支持Mozilla浏览器
+        else if(window.DOMParser && document.implementation && document.implementation.createDocument){
+            try{
+                /* DOMParser 对象解析 XML 文本并返回一个 XML Document 对象。
+                 * 要使用 DOMParser，使用不带参数的构造函数来实例化它，然后调用其 parseFromString() 方法
+                 * parseFromString(text, contentType) 参数text:要解析的 XML 标记 参数contentType文本的内容类型
+                 * 可能是 "text/xml" 、"application/xml" 或 "application/xhtml+xml" 中的一个。注意，不支持 "text/html"。
+                 */
+                domParser = new  DOMParser();
+                xmlDoc = domParser.parseFromString(xmlString, 'text/xml');
+            }catch(e){
+            }
+        }
+        else{
+            return null;
+        }
+
+        return xmlDoc;
+    }
+	
+	
+
+		</script>
+	</body>
+
+</html>

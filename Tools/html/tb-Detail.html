@@ -1,0 +1,335 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>淘女郎</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+
+		<style type="text/css">
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+			
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
+			
+			.detail-nav {
+				background-color: rgba(27, 130, 210, 255);
+				height: 50px;
+				color: #FFFFFF;
+			}
+			
+			.mui-title {
+				line-height: 50px;
+			}
+			.pic-down{
+				width: 30%;
+				height: 30px;
+				border-radius: 15px;
+				position: relative;
+				top: -35px;
+				filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6;
+				text-align: center;
+				line-height: 30px;
+				color: #FFFFFF;
+				background-color: gray;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav detail-nav ">
+			<h1 class="mui-title" style="text-align: left;left: 20px;right: 0;color: #FFFFFF;font-size: 16px;line-height: 50px;">淘女郎 / 欧美</h1>
+			
+		</header>
+		<div class="mui-content">
+			
+			<div  class="mui-scroll-wrapper">
+				<div class="mui-card" style="margin: 0 !important;padding-top: 60px;padding-left: 15px;">
+					<p>共查询到结果：<span id="allNum"></span></p>
+				</div>
+				<div class="mui-scroll" id="scroll-tuijian">
+					
+					
+					<div class="mui-card" id="tb-content" style="margin: 0 !important;">
+						<ul class="mui-table-view" id="ul-content">
+							
+						</ul>
+					</div>
+								
+				</div>
+			</div>
+			
+			
+			
+			<!--<div class="mui-content-padded">
+				<ul class="mui-pagination mui-pagination-sm" id="show-page">
+					<li class="mui-previous mui-disabled">
+						<a href="#">
+							&laquo;
+						</a>
+					</li>
+					<li class="mui-active">
+						<a href="#">
+							1
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							2
+						</a>
+					</li>
+					<li >
+						<a href="#">
+							3
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							4
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							5
+						</a>
+					</li>
+					<li class="mui-next">
+						<a href="#">
+							&raquo;
+						</a>
+					</li>
+					
+				</ul>
+				
+			</div>-->
+
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/mui.zoom.js"></script>
+	<script src="../js/mui.previewimage.js"></script>
+	<script src="../js/app/mui.pullToRefresh.js"></script>
+	<script src="../js/app/mui.pullToRefresh.material.js"></script>
+	<script src="../js/app/tb-Detail.js"></script>
+	
+	<script>
+		mui.previewImage();
+
+
+		//下载图片
+		$(document).on('click',".pic-down",function(e){
+			var actionList = {
+				title: '操作',
+				cancel: "取消",
+				buttons: [{
+					title: "保存图片"
+				}]
+			};
+			var imgSrc = this.previousSibling.src;
+//			alert(this.previousSibling.src)
+			//弹出actionSheet选项
+			plus.nativeUI.actionSheet(actionList, function(e) {
+				if(e.index == 1) {
+					//创建一个下载任务
+					var imgDtask = plus.downloader.createDownload(imgSrc, {
+//						method: "GET"
+					}, function(d, status) {
+//						alert(d.filename)
+						//下载完成的回调函数
+						if(status == 200) {
+							plus.gallery.save(d.filename, function() { //保存到相册
+								plus.io.resolveLocalFileSystemURL(d.filename, function(entry) {
+									entry.remove(); //删除临时文件
+								});
+								return alert('图片已保存至相册');
+							});
+						} else {
+							alert("保存失败!" + status);
+						}
+					});
+					imgDtask.start(); //开始下载任务
+				}
+			});
+		});
+
+
+	
+	</script>
+
+</html>

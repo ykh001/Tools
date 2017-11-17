@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>查看便签详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<!-- 样式导入 -->
+		<link rel="stylesheet" href="css/app/notedetail.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<!-- 头部区域 -->
+		<header class="mui-bar mui-bar-nav detail-nav" style="background: rgba(27,130,210,255);height: 50px;">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;padding:13px 10px;"></a>
+		    <h1 class="mui-title" style="color: #FFFFFF;line-height: 50px;">便签查看</h1>
+		</header>
+		
+		<!-- 内容区域 -->
+		<div class="mui-content">
+		    <div class="note-detail-view"></div>
+		    <!-- 编写日期 -->
+		    <span class="show-createtime"></span>
+		</div>
+		
+		<!-- js文件导入 -->
+		<script type="text/javascript" src="js/app/notedetail.js" ></script>
+	</body>
+
+</html>

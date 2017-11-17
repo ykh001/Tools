@@ -1,0 +1,117 @@
+/**
+ * 城市管理css
+ */
+.edit-city {
+	display:  inline-block;
+	position: absolute;
+	left: 75%;
+	top: 13px;
+}
+
+.city-manage-nav {
+	box-shadow: none !important;
+	border-bottom: 1px solid rgba(121, 121, 121, 0.35);
+}
+
+/*更改添加城市默认图标样式*/
+.mui-bar-nav .add-city {
+	margin-top: -4px;
+	font-size: 32px !important;
+}
+
+.city {
+	width: 100%;
+	height: 60px;
+	position: relative;
+	box-shadow: 0 2px 1px rgba(158, 158, 158, 0.25);
+}
+
+.city-weather-left,
+.city-info,
+.city-temperature-right {
+	width: 40%;
+	height: 100%;
+	float: left;
+}
+
+/*城市天气 */
+.city-weather-left {
+	width: 18%;
+}
+
+.cityweather-toggleClass {
+	position: absolute;
+	left: 27%;
+}
+
+.city-weather-left img { 
+	position: relative;
+	top: 18px;
+	left: 28%;
+}
+
+/*城市信息*/
+.city-info {
+	position: absolute;
+	left: 18%;
+	top: 0;
+	padding-top: 12px;
+	padding-left: 3px;
+}
+
+/*编辑城市切换样式*/
+.cityinfo-toggleClass {
+	position: absolute;
+	left: 42%;
+	top: 0;
+	padding-top: 12px;
+	padding-left: 3px;
+}
+
+.city-info-desc {
+	padding: 0 3px;
+	display: block;
+	margin-top: 12px;
+}
+
+/*城市温度*/
+.city-temperature-right {
+	float: right;
+}
+
+/*城市温度样式切换*/
+.citytemp-toggleClass {
+	float: right;
+	display: none;
+}
+
+.city-temp-wrapper {
+	padding-left: 40%;
+	margin-top: 15%;
+}
+
+.delete-city {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 33%;
+	left: 20px;
+	border-radius: 50%;
+	background-color: #f44336;
+}
+
+.delete-city span {
+	width:50%;
+	height: 2px;
+	position: absolute;
+	top: 45%;
+	left: 6px;
+	border-radius: 2px;
+	background-color: #FFFFFF;
+}
+
+.gps-icon {
+	display: inline-block;
+	position: relative;
+	top: 1px;
+}
